@@ -12,6 +12,8 @@ import {
 import { Icon, Avatar } from "react-native-elements";
 import { useFonts } from "expo-font";
 import { TextInput } from "react-native-gesture-handler";
+import BackGround from "../Components/background";
+import Header from "../Components/Header";
 
 export default function EditProfile({ navigation }) {
   const window = Dimensions.get("window");
@@ -28,73 +30,12 @@ export default function EditProfile({ navigation }) {
   } else {
     return (
       <KeyboardAvoidingView
-        style={{ flex: 1 }}
+        style={{ flex: 1, backgroundColor: "#ededed" }}
         behavior={Platform.OS == "ios" ? "padding" : "height"}
       >
         <StatusBar style="auto" />
-        <View
-          style={{
-            backgroundColor: "#2a8ca7",
-            borderRadius: window.width,
-            width: window.width * 2,
-            height: window.width * 2,
-            marginLeft: -(window.width / 2),
-            position: "absolute",
-            overflow: "hidden",
-            bottom: "70%",
-          }}
-        />
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "center",
-            margin: "3%",
-            marginTop: "12%",
-          }}
-        >
-          <Icon
-            name="arrow-back"
-            size={25}
-            color="#fff"
-            style={{ flex: 1, marginLeft: "5%" }}
-          />
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "center",
-              flex: 3,
-            }}
-          >
-            <Avatar
-              rounded
-              size={30}
-              source={require("../assets/logo.png")}
-              containerStyle={{ marginHorizontal: "5%" }}
-            />
-            <View style={{ borderLeftColor: "#fff", borderLeftWidth: 1 }}>
-              <Text
-                style={{
-                  color: "#fff",
-                  fontSize: 16,
-                  paddingHorizontal: 15,
-                  fontFamily: "Light",
-                }}
-              >
-                Guhaar App
-              </Text>
-              <Text
-                style={{
-                  fontSize: 8,
-                  marginLeft: 10,
-                  color: "#fff",
-                  fontFamily: "Light",
-                }}
-              >
-                Baster Districk Administration , Chattisgarh
-              </Text>
-            </View>
-          </View>
-        </View>
+        <BackGround />
+        <Header />
         <View
           style={{
             height: 600,
