@@ -2,6 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { View, ActivityIndicator, Dimensions } from "react-native";
 import { useFonts } from "expo-font";
+import { LinearGradient } from "expo-linear-gradient";
 
 export default function Background({ navigation }) {
   const window = Dimensions.get("window");

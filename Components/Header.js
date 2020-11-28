@@ -8,6 +8,7 @@ import {
   Pressable,
   Dimensions,
   KeyboardAvoidingView,
+  Image,
 } from "react-native";
 import { Icon, Avatar } from "react-native-elements";
 import { useFonts } from "expo-font";
@@ -48,11 +49,14 @@ export default function Header({ navigation }) {
             flex: 3,
           }}
         >
-          <Avatar
-            rounded
-            size={30}
-            source={require("../assets/logo.png")}
-            containerStyle={{ marginHorizontal: "5%" }}
+          <Image
+            style={{
+              width: 30,
+              height: 30,
+              marginHorizontal: "5%",
+              borderRadius: 100,
+            }}
+            source={require("../assets/images/logo.png")}
           />
           <View style={{ borderLeftColor: "#fff", borderLeftWidth: 1 }}>
             <Text
