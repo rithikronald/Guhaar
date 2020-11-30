@@ -55,7 +55,7 @@ export default function PublicService({ navigation }) {
                   borderRadius: 100,
                 }}
                 onPress={() => {
-                  navigation.push();
+                  navigation.push("NewComplaints");
                 }}
               >
                 <Image

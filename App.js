@@ -7,6 +7,10 @@ import DepartmentsList from "./screens/DepartmentsList";
 import Profile from "./screens/Profile";
 import Dashboard from "./screens/DashBoard";
 import PublicService from "./screens/PublicService";
+import NewComplaints from "./screens/newComplaints";
+import ChangeLanguage from "./screens/ChangeLanguage";
+import Permission from "./screens/Permission";
+import About from "./screens/About";
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -23,6 +27,10 @@ export default function App() {
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="Dashboard" component={Dashboard} />
         <Stack.Screen name="PublicService" component={PublicService} />
+        <Stack.Screen name="NewComplaints" component={NewComplaints} />
+        <Stack.Screen name="ChangeLanguage" component={ChangeLanguage} />
+        <Stack.Screen name="Permission" component={Permission} />
+        <Stack.Screen name="About" component={About} />
       </Stack.Navigator>
     </NavigationContainer>
   );
