@@ -114,9 +114,6 @@ export default function PublicService({ navigation }) {
                   backgroundColor: "#ddd",
                   borderRadius: 100,
                 }}
-                onPress={() => {
-                  navigation.push();
-                }}
               >
                 <Image
                   style={{

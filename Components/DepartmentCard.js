@@ -32,6 +32,7 @@ export default function DepartmentCard(props, { navigation }) {
           alignItems: "center",
           marginVertical: "2%",
           paddingVertical: "6%",
+          backgroundColor: "#fff",
         }}
       >
         <View style={{ flex: 4 }}>

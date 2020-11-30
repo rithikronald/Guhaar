@@ -10,6 +10,7 @@ import PublicService from "./screens/PublicService";
 
 export default function App() {
   const Stack = createStackNavigator();
+
   return (
     <NavigationContainer>
       <Stack.Navigator
