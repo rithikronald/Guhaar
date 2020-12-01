@@ -270,7 +270,7 @@ export default function Profile({ navigation }) {
             right: "8%",
           }}
           onPress={() => {
-            navigation.push("About");
+            navigation.push("OnBoarding");
           }}
         />
       </View>

@@ -11,6 +11,9 @@ import NewComplaints from "./screens/newComplaints";
 import ChangeLanguage from "./screens/ChangeLanguage";
 import Permission from "./screens/Permission";
 import About from "./screens/About";
+import OnBoarding from "./screens/OnBoarding";
+import MyComplaint from "./screens/MyComplaints";
+import Login from "./screens/Login";
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -18,7 +21,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="EditProfile"
+        initialRouteName="MyComplaint"
         screenOptions={{ headerShown: false }}
       >
         <Stack.Screen name="ComplaintDetails" component={ComplaintDetails} />
@@ -31,6 +34,9 @@ export default function App() {
         <Stack.Screen name="ChangeLanguage" component={ChangeLanguage} />
         <Stack.Screen name="Permission" component={Permission} />
         <Stack.Screen name="About" component={About} />
+        <Stack.Screen name="OnBoarding" component={OnBoarding} />
+        <Stack.Screen name="MyComplaint" component={MyComplaint} />
+        <Stack.Screen name="Login" component={Login} />
       </Stack.Navigator>
     </NavigationContainer>
   );
