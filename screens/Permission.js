@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 import { Avatar, Icon } from "react-native-elements";
+import PermissionCard from "../Components/Permission";
 
 import { useFonts } from "expo-font";
 
@@ -54,207 +55,10 @@ export default function Profile({ navigation }) {
           horizontal
           showsHorizontalScrollIndicator={false}
         >
-          <View
-            style={{
-              width: 300,
-              height: 460,
-              elevation: 8,
-              borderRadius: 20,
-              backgroundColor: "#fff",
-              marginHorizontal: 10,
-            }}
-          >
-            <View
-              style={{
-                flex: 1,
-                alignItems: "center",
-                paddingVertical: "4%",
-                justifyContent: "space-around",
-              }}
-            >
-              <Avatar
-                title="SE"
-                size={200}
-                containerStyle={{
-                  backgroundColor: "#c1c1c1",
-                }}
-                rounded
-              />
-              <View style={{ width: "80%" }}>
-                <Text
-                  style={{
-                    fontFamily: "Bold",
-                    fontSize: 24,
-                    textAlign: "center",
-                  }}
-                >
-                  STORAGE
-                </Text>
-                <Text
-                  style={{
-                    fontFamily: "Book",
-                    fontSize: 18,
-                    flexWrap: "wrap",
-                    width: "60%",
-                    textAlign: "center",
-                    alignSelf: "center",
-                    marginVertical: "4%",
-                    color: "#c1c1c1",
-                  }}
-                >
-                  Once upon a time there live a Ghost... And the name is Vikram
-                </Text>
-              </View>
-              <TouchableOpacity
-                style={{
-                  width: 150,
-                  height: 40,
-                  borderRadius: 20,
-                  alignItems: "center",
-                  justifyContent: "center",
-                  backgroundColor: "#19539C",
-                }}
-              >
-                <Text style={{ color: "#fff", fontFamily: "Medium" }}>
-                  Allow
-                </Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-          <View
-            style={{
-              width: 300,
-              height: 460,
-              elevation: 8,
-              borderRadius: 20,
-              backgroundColor: "#fff",
-              marginHorizontal: 10,
-            }}
-          >
-            <View
-              style={{
-                flex: 1,
-                alignItems: "center",
-                paddingVertical: "4%",
-                justifyContent: "space-around",
-              }}
-            >
-              <Avatar
-                title="SE"
-                size={200}
-                containerStyle={{
-                  backgroundColor: "#c1c1c1",
-                }}
-                rounded
-              />
-              <View style={{ width: "80%" }}>
-                <Text
-                  style={{
-                    fontFamily: "Bold",
-                    fontSize: 24,
-                    textAlign: "center",
-                  }}
-                >
-                  STORAGE
-                </Text>
-                <Text
-                  style={{
-                    fontFamily: "Book",
-                    fontSize: 18,
-                    flexWrap: "wrap",
-                    width: "60%",
-                    textAlign: "center",
-                    alignSelf: "center",
-                    marginVertical: "4%",
-                    color: "#c1c1c1",
-                  }}
-                >
-                  Once upon a time there live a Ghost... And the name is Vikram
-                </Text>
-              </View>
-              <TouchableOpacity
-                style={{
-                  width: 150,
-                  height: 40,
-                  borderRadius: 20,
-                  alignItems: "center",
-                  justifyContent: "center",
-                  backgroundColor: "#19539C",
-                }}
-              >
-                <Text style={{ color: "#fff", fontFamily: "Medium" }}>
-                  Allow
-                </Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-          <View
-            style={{
-              width: 300,
-              height: 460,
-              elevation: 8,
-              borderRadius: 20,
-              backgroundColor: "#fff",
-              marginHorizontal: 10,
-            }}
-          >
-            <View
-              style={{
-                flex: 1,
-                alignItems: "center",
-                paddingVertical: "4%",
-                justifyContent: "space-around",
-              }}
-            >
-              <Avatar
-                title="SE"
-                size={200}
-                containerStyle={{
-                  backgroundColor: "#c1c1c1",
-                }}
-                rounded
-              />
-              <View style={{ width: "80%" }}>
-                <Text
-                  style={{
-                    fontFamily: "Bold",
-                    fontSize: 24,
-                    textAlign: "center",
-                  }}
-                >
-                  STORAGE
-                </Text>
-                <Text
-                  style={{
-                    fontFamily: "Book",
-                    fontSize: 18,
-                    flexWrap: "wrap",
-                    width: "60%",
-                    textAlign: "center",
-                    alignSelf: "center",
-                    marginVertical: "4%",
-                    color: "#c1c1c1",
-                  }}
-                >
-                  Once upon a time there live a Ghost... And the name is Vikram
-                </Text>
-              </View>
-              <TouchableOpacity
-                style={{
-                  width: 150,
-                  height: 40,
-                  borderRadius: 20,
-                  alignItems: "center",
-                  justifyContent: "center",
-                  backgroundColor: "#19539C",
-                }}
-              >
-                <Text style={{ color: "#fff", fontFamily: "Medium" }}>
-                  Allow
-                </Text>
-              </TouchableOpacity>
-            </View>
-          </View>
+          <PermissionCard title="STORAGE" Icon="folder" />
+          <PermissionCard title="CAMERA" Icon="camera-retro" />
+          <PermissionCard title="LOCATION" Icon="search-location" />
+          <PermissionCard title="VOICE RECORDING" Icon="microphone-alt" />
         </ScrollView>
         <Icon
           name="chevron-right"
@@ -270,7 +74,7 @@ export default function Profile({ navigation }) {
             right: "8%",
           }}
           onPress={() => {
-            navigation.push("OnBoarding");
+            navigation.push("ChangeLanguage");
           }}
         />
       </View>

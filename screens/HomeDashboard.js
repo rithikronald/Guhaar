@@ -16,7 +16,7 @@ import { useFonts } from "expo-font";
 import BackGround from "../Components/background";
 import Header from "../Components/Header";
 
-export default function Profile({ navigation }) {
+export default function HomeDashboard({ navigation }) {
   const [search, setSearch] = useState("");
   const window = Dimensions.get("window");
 
@@ -57,7 +57,7 @@ export default function Profile({ navigation }) {
                 color: "#dddd",
               }}
             >
-              98
+              01
             </Text>
             <Text
               style={{
@@ -68,15 +68,15 @@ export default function Profile({ navigation }) {
                 flexWrap: "wrap",
               }}
             >
-              Total Loged Complaints
+              Open Complaints
             </Text>
           </View>
           <View
             style={{
               width: "1%",
-              backgroundColor: "#fff",
+              backgroundColor: "#dddd",
               alignSelf: "center",
-              height: 70,
+              height: 90,
             }}
           />
           <View
@@ -93,7 +93,7 @@ export default function Profile({ navigation }) {
                 color: "#dddd",
               }}
             >
-              211
+              00
             </Text>
             <Text
               style={{
@@ -104,7 +104,7 @@ export default function Profile({ navigation }) {
                 flexWrap: "wrap",
               }}
             >
-              Total Loged Complaints
+              Resolved Complaints
             </Text>
           </View>
         </View>
@@ -124,7 +124,7 @@ export default function Profile({ navigation }) {
             <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
               <TouchableOpacity
                 onPress={() => {
-                  navigation.push("PublicService");
+                  navigation.push("NewComplaints");
                 }}
               >
                 <Image
@@ -143,11 +143,15 @@ export default function Profile({ navigation }) {
                   paddingVertical: 10,
                 }}
               >
-                My Pending Complaint
+                Lodge Complaint
               </Text>
             </View>
             <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.push("MyComplaint");
+                }}
+              >
                 <Image
                   style={{
                     width: 60,
@@ -170,7 +174,11 @@ export default function Profile({ navigation }) {
           </View>
           <View style={{ flex: 1, flexDirection: "row", flexWrap: "wrap" }}>
             <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.push("RejectedComplaint");
+                }}
+              >
                 <Image
                   style={{
                     width: 60,
@@ -191,7 +199,11 @@ export default function Profile({ navigation }) {
               </Text>
             </View>
             <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.push("ClosedComplaint");
+                }}
+              >
                 <Image
                   style={{
                     width: 60,
@@ -214,7 +226,11 @@ export default function Profile({ navigation }) {
           </View>
           <View style={{ flex: 1, flexDirection: "row", flexWrap: "wrap" }}>
             <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.push("PublicService");
+                }}
+              >
                 <Image
                   style={{
                     width: 60,
@@ -235,7 +251,11 @@ export default function Profile({ navigation }) {
               </Text>
             </View>
             <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.push("DepartmentsList");
+                }}
+              >
                 <Image
                   style={{
                     width: 60,

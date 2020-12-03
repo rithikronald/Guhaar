@@ -48,20 +48,11 @@ export default function PublicService({ navigation }) {
           </View>
           <View style={{ flex: 1, flexDirection: "row", flexWrap: "wrap" }}>
             <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
-              <TouchableOpacity
-                style={{
-                  padding: 15,
-                  backgroundColor: "#ddd",
-                  borderRadius: 100,
-                }}
-                onPress={() => {
-                  navigation.push("NewComplaints");
-                }}
-              >
+              <TouchableOpacity>
                 <Image
                   style={{
-                    width: 40,
-                    height: 40,
+                    width: 60,
+                    height: 60,
                   }}
                   source={require("../assets/images/lodge-complaint.png")}
                 />
@@ -74,21 +65,15 @@ export default function PublicService({ navigation }) {
                   paddingVertical: 10,
                 }}
               >
-                My Pending Complaint
+                New Ration Card Request
               </Text>
             </View>
             <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
-              <TouchableOpacity
-                style={{
-                  padding: 15,
-                  backgroundColor: "#ddd",
-                  borderRadius: 100,
-                }}
-              >
+              <TouchableOpacity>
                 <Image
                   style={{
-                    width: 40,
-                    height: 40,
+                    width: 60,
+                    height: 60,
                   }}
                   source={require("../assets/images/my-complaint.png")}
                 />
@@ -101,24 +86,18 @@ export default function PublicService({ navigation }) {
                   paddingVertical: 10,
                 }}
               >
-                My Complaint
+                Indira Gandhi Pension Scheme
               </Text>
             </View>
           </View>
 
           <View style={{ flex: 1, flexDirection: "row", flexWrap: "wrap" }}>
             <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
-              <TouchableOpacity
-                style={{
-                  padding: 15,
-                  backgroundColor: "#ddd",
-                  borderRadius: 100,
-                }}
-              >
+              <TouchableOpacity>
                 <Image
                   style={{
-                    width: 40,
-                    height: 40,
+                    width: 60,
+                    height: 60,
                   }}
                   source={require("../assets/images/lodge-complaint.png")}
                 />
@@ -131,21 +110,15 @@ export default function PublicService({ navigation }) {
                   paddingVertical: 10,
                 }}
               >
-                My Pending Complaint
+                Old Age Pension Scheme
               </Text>
             </View>
             <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
-              <TouchableOpacity
-                style={{
-                  padding: 15,
-                  backgroundColor: "#ddd",
-                  borderRadius: 100,
-                }}
-              >
+              <TouchableOpacity>
                 <Image
                   style={{
-                    width: 40,
-                    height: 40,
+                    width: 60,
+                    height: 60,
                   }}
                   source={require("../assets/images/my-complaint.png")}
                 />
@@ -158,23 +131,17 @@ export default function PublicService({ navigation }) {
                   paddingVertical: 10,
                 }}
               >
-                My Complaint
+                Window pension Scheme
               </Text>
             </View>
           </View>
           <View style={{ flex: 1, flexDirection: "row", flexWrap: "wrap" }}>
             <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
-              <TouchableOpacity
-                style={{
-                  padding: 15,
-                  backgroundColor: "#ddd",
-                  borderRadius: 100,
-                }}
-              >
+              <TouchableOpacity>
                 <Image
                   style={{
-                    width: 40,
-                    height: 40,
+                    width: 60,
+                    height: 60,
                   }}
                   source={require("../assets/images/closed-complaint.png")}
                 />
@@ -187,21 +154,15 @@ export default function PublicService({ navigation }) {
                   paddingVertical: 10,
                 }}
               >
-                Closed Complaint
+                Residential Certificate
               </Text>
             </View>
             <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
-              <TouchableOpacity
-                style={{
-                  padding: 15,
-                  backgroundColor: "#ddd",
-                  borderRadius: 100,
-                }}
-              >
+              <TouchableOpacity>
                 <Image
                   style={{
-                    width: 40,
-                    height: 40,
+                    width: 60,
+                    height: 60,
                   }}
                   source={require("../assets/images/rejected-complaint.png")}
                 />
@@ -214,23 +175,17 @@ export default function PublicService({ navigation }) {
                   paddingVertical: 10,
                 }}
               >
-                Rejected Complaint
+                Income Certificate Request
               </Text>
             </View>
           </View>
           <View style={{ flex: 1, flexDirection: "row", flexWrap: "wrap" }}>
             <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
-              <TouchableOpacity
-                style={{
-                  padding: 15,
-                  backgroundColor: "#ddd",
-                  borderRadius: 100,
-                }}
-              >
+              <TouchableOpacity>
                 <Image
                   style={{
-                    width: 40,
-                    height: 40,
+                    width: 60,
+                    height: 60,
                   }}
                   source={require("../assets/images/public-service.png")}
                 />
@@ -243,21 +198,15 @@ export default function PublicService({ navigation }) {
                   paddingVertical: 10,
                 }}
               >
-                Public Service
+                Cleanliness Request
               </Text>
             </View>
             <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
-              <TouchableOpacity
-                style={{
-                  padding: 15,
-                  backgroundColor: "#ddd",
-                  borderRadius: 100,
-                }}
-              >
+              <TouchableOpacity>
                 <Image
                   style={{
-                    width: 40,
-                    height: 40,
+                    width: 60,
+                    height: 60,
                   }}
                   source={require("../assets/images/all-departments.png")}
                 />
@@ -270,7 +219,7 @@ export default function PublicService({ navigation }) {
                   paddingVertical: 10,
                 }}
               >
-                All Departments
+                Street Light Change Request
               </Text>
             </View>
           </View>

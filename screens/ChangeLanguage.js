@@ -8,6 +8,7 @@ import {
   StyleSheet,
   Dimensions,
   KeyboardAvoidingView,
+  Image,
 } from "react-native";
 import { Icon, Avatar } from "react-native-elements";
 import { useFonts } from "expo-font";
@@ -28,22 +29,45 @@ export default function ChangeLanguage({ navigation }) {
   } else {
     return (
       <View style={styles.container}>
-        <View style={styles.header}>
-          <TouchableOpacity style={styles.backBtn}>
-            <Icon
-              size={24}
-              name="chevron-left"
-              type="font-awesome-5"
-              style={{ marginBottom: 4, marginRight: 2 }}
-              color="#19539C"
-            />
-          </TouchableOpacity>
-
-          <Text style={styles.titleText}>Change Language</Text>
+        <View
+          style={{
+            width: "100%",
+            height: "20%",
+            backgroundColor: "#19539C",
+          }}
+        >
+          <Icon
+            name="chevron-left"
+            size={20}
+            type="font-awesome-5"
+            color="#19539C"
+            containerStyle={{
+              backgroundColor: "#fff",
+              borderRadius: 100,
+              width: 30,
+              height: 30,
+              justifyContent: "center",
+              marginLeft: "5%",
+              marginVertical: "8%",
+            }}
+          />
+          <Text
+            style={{
+              fontFamily: "Medium",
+              fontSize: 25,
+              color: "#fff",
+              marginLeft: "5%",
+            }}
+          >
+            Change Language
+          </Text>
         </View>
 
         <View style={styles.centerContent}>
-          <Text style={styles.titleText}>Here comes image</Text>
+          <Image
+            source={require("../assets/images/language.png")}
+            style={{ width: 200, height: 200 }}
+          />
           <View style={styles.roundedBtnBlue}>
             <Text style={styles.titleText}>English</Text>
           </View>
@@ -53,12 +77,30 @@ export default function ChangeLanguage({ navigation }) {
         </View>
 
         <TouchableOpacity
-          style={styles.saveBtn}
+          style={{
+            bottom: "5%",
+            alignSelf: "flex-end",
+            borderRadius: 25,
+            padding: 8,
+            alignItems: "center",
+            backgroundColor: "#19539C",
+            justifyContent: "center",
+            right: "3%",
+          }}
           onPress={() => {
-            navigation.push("Permission");
+            navigation.push("Login");
           }}
         >
-          <Text style={styles.titleText}>Save →</Text>
+          <Text
+            style={{
+              fontSize: 18,
+              color: "white",
+              marginHorizontal: "8%",
+              fontFamily: "Bold",
+            }}
+          >
+            SAVE
+          </Text>
         </TouchableOpacity>
       </View>
     );

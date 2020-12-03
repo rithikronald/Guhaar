@@ -30,26 +30,47 @@ export default function NewComplaint({ navigation }) {
     return (
       <View style={styles.container}>
         <StatusBar style="auto" />
-        <View style={styles.header}>
-          <TouchableOpacity style={styles.backBtn}>
-            <Icon
-              name="chevron-left"
-              size={25}
-              type="font-awesome-5"
-              color="#19539C"
-            />
-          </TouchableOpacity>
-
-          <Text style={styles.titleText}>Lodge New Complaint</Text>
+        <View
+          style={{
+            width: "100%",
+            height: "20%",
+            backgroundColor: "#19539C",
+          }}
+        >
+          <Icon
+            name="chevron-left"
+            size={20}
+            type="font-awesome-5"
+            color="#19539C"
+            containerStyle={{
+              backgroundColor: "#fff",
+              borderRadius: 100,
+              width: 30,
+              height: 30,
+              justifyContent: "center",
+              marginLeft: "5%",
+              marginVertical: "9%",
+            }}
+          />
+          <Text
+            style={{
+              fontFamily: "Medium",
+              fontSize: 25,
+              color: "#fff",
+              marginLeft: "5%",
+              flex: 1,
+            }}
+          >
+            Lodge New Complaints
+          </Text>
         </View>
-
         <Text style={styles.blueFont}>Personal Information</Text>
         <View style={styles.centerContent}>
-          <TextInput placeholder="FULL NAME" style={styles.inputStyle} />
+          <TextInput placeholder="Full Name" style={styles.inputStyle} />
 
           <View style={styles.rowInputs}>
             <TextInput
-              placeholder="AGE GROUP"
+              placeholder="Age Group"
               style={{
                 marginEnd: 4,
                 marginVertical: "2%",
@@ -58,22 +79,15 @@ export default function NewComplaint({ navigation }) {
                 textAlignVertical: "top",
                 shadowColor: "#0000",
                 backgroundColor: "white",
-                shadowOffset: {
-                  width: 10,
-                  height: 10,
-                },
-                elevation: 1,
-                shadowOpacity: 100.0,
-                shadowRadius: 60,
                 borderRadius: 6,
                 paddingHorizontal: "5%",
                 paddingVertical: "2%",
-                fontFamily: "Bold",
+                fontFamily: "Medium",
               }}
             />
 
             <TextInput
-              placeholder="MALE"
+              placeholder="Male"
               style={{
                 marginVertical: "2%",
                 width: "30%",
@@ -81,22 +95,15 @@ export default function NewComplaint({ navigation }) {
                 textAlignVertical: "top",
                 shadowColor: "#0000",
                 backgroundColor: "white",
-                shadowOffset: {
-                  width: 10,
-                  height: 10,
-                },
-                elevation: 1,
-                shadowOpacity: 100.0,
-                shadowRadius: 60,
                 borderRadius: 6,
                 paddingHorizontal: "5%",
                 paddingVertical: "2%",
-                fontFamily: "Bold",
+                fontFamily: "Medium",
               }}
             />
           </View>
 
-          <TextInput placeholder="MOBILE NUMBER" style={styles.inputStyle} />
+          <TextInput placeholder="Mobile Number" style={styles.inputStyle} />
 
           <TextInput
             placeholder="Enter Your Address"
@@ -109,18 +116,10 @@ export default function NewComplaint({ navigation }) {
               textAlignVertical: "top",
               shadowColor: "#0000",
               backgroundColor: "white",
-              shadowOffset: {
-                width: 10,
-                height: 10,
-              },
-              elevation: 1,
-              shadowOpacity: 100.0,
-              shadowRadius: 60,
               borderRadius: 6,
               paddingHorizontal: "5%",
               paddingVertical: "2%",
-              lineHeight: 24,
-              fontFamily: "Bold",
+              fontFamily: "Medium",
             }}
           />
           <TextInput placeholder="Occupation" style={styles.inputStyle} />
@@ -132,21 +131,29 @@ export default function NewComplaint({ navigation }) {
           <TextInput placeholder="ID Card Number" style={styles.inputStyle} />
         </View>
         <TouchableOpacity
-          style={styles.saveBtn}
+          style={{
+            bottom: "5%",
+            alignSelf: "flex-end",
+            borderRadius: 25,
+            padding: 8,
+            alignItems: "center",
+            backgroundColor: "#19539C",
+            justifyContent: "center",
+            right: "3%",
+          }}
           onPress={() => {
             navigation.push("ChangeLanguage");
           }}
         >
           <Text
             style={{
-              fontSize: 16,
+              fontSize: 18,
               color: "white",
-              fontWeight: "bold",
               marginHorizontal: "8%",
               fontFamily: "Bold",
             }}
           >
-            NEXT →
+            NEXT
           </Text>
         </TouchableOpacity>
       </View>
@@ -209,18 +216,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "flex-start",
   },
-  saveBtn: {
-    width: 120,
-    position: "absolute",
-    bottom: 0,
-    alignSelf: "flex-end",
-    margin: 10,
-    borderRadius: 48,
-    elevation: 10,
-    padding: 6,
-    alignItems: "center",
-    backgroundColor: "#19539C",
-  },
+
   blueFont: {
     color: "#19539C",
     fontSize: 24,
@@ -235,17 +231,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     shadowColor: "#0000",
     backgroundColor: "white",
-    shadowOffset: {
-      width: 10,
-      height: 10,
-    },
-    elevation: 1,
-    shadowOpacity: 100.0,
-    shadowRadius: 60,
     borderRadius: 6,
     paddingHorizontal: "5%",
     paddingVertical: "2%",
-    fontFamily: "Bold",
+    fontFamily: "Medium",
   },
   rowInputs: {
     flexDirection: "row",

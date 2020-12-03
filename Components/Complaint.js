@@ -12,7 +12,7 @@ import { Icon } from "react-native-elements";
 
 import { useFonts } from "expo-font";
 
-export default function Profile({ navigation }) {
+export default function Profile(props, { navigation }) {
   const window = Dimensions.get("window");
 
   const [fontsLoaded] = useFonts({
@@ -145,6 +145,7 @@ export default function Profile({ navigation }) {
               backgroundColor: "#19539C",
               borderRadius: 20,
             }}
+            onPress={props.onPress}
           >
             <Text style={{ color: "#fff" }}>Open</Text>
           </TouchableOpacity>

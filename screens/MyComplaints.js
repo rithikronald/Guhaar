@@ -47,8 +47,16 @@ export default function Profile({ navigation }) {
         <BackGround />
         <Header />
         <View style={{ flex: 1, alignItems: "center", marginTop: "4%" }}>
-          <ComplaintCard />
-          <ComplaintCard />
+          <ComplaintCard
+            onPress={() => {
+              navigation.push("ComplaintDetails");
+            }}
+          />
+          <ComplaintCard
+            onPress={() => {
+              navigation.push("ComplaintDetails");
+            }}
+          />
         </View>
       </View>
     );

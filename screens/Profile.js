@@ -119,7 +119,7 @@ export default function Profile({ navigation }) {
                 padding: "2%",
                 marginTop: "4%",
               }}
-              onPress={() => navigation.push("Dashboard")}
+              onPress={() => navigation.push("EditProfile")}
             >
               <Text style={{ color: "#fff", fontSize: 12, fontFamily: "Bold" }}>
                 EDIT PROFILE

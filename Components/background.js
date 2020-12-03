@@ -27,7 +27,7 @@ export default function Background({ navigation }) {
           marginLeft: -(window.width / 2),
           position: "absolute",
           overflow: "hidden",
-          bottom: "70%",
+          bottom: "65%",
         }}
       />
     );

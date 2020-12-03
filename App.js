@@ -14,6 +14,12 @@ import About from "./screens/About";
 import OnBoarding from "./screens/OnBoarding";
 import MyComplaint from "./screens/MyComplaints";
 import Login from "./screens/Login";
+import OTP from "./screens/OTP";
+import NewService from "./screens/NewService";
+import NewService2 from "./screens/NewService2";
+import HomeDashboard from "./screens/HomeDashboard";
+import ClosedComplaint from "./screens/ClosedComplaint";
+import RejectedComplaint from "./screens/RejectedComplaint";
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -21,7 +27,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="MyComplaint"
+        initialRouteName="OnBoarding"
         screenOptions={{ headerShown: false }}
       >
         <Stack.Screen name="ComplaintDetails" component={ComplaintDetails} />
@@ -37,6 +43,12 @@ export default function App() {
         <Stack.Screen name="OnBoarding" component={OnBoarding} />
         <Stack.Screen name="MyComplaint" component={MyComplaint} />
         <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="OTP" component={OTP} />
+        <Stack.Screen name="NewService" component={NewService} />
+        <Stack.Screen name="HomeDashboard" component={HomeDashboard} />
+        <Stack.Screen name="NewService2" component={NewService2} />
+        <Stack.Screen name="ClosedComplaint" component={ClosedComplaint} />
+        <Stack.Screen name="RejectedComplaint" component={RejectedComplaint} />
       </Stack.Navigator>
     </NavigationContainer>
   );

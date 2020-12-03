@@ -63,7 +63,7 @@ export default function Profile({ navigation }) {
                 fontFamily: "Book",
               }}
               keyboardType="number-pad"
-              maxlength={10}
+              maxLength={10}
             />
             <View style={{ flex: 1 }}>
               <Icon
@@ -78,6 +78,9 @@ export default function Profile({ navigation }) {
                   height: 50,
                   justifyContent: "center",
                   alignSelf: "flex-end",
+                }}
+                onPress={() => {
+                  navigation.push("OTP");
                 }}
               />
             </View>

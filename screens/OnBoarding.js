@@ -59,11 +59,21 @@ export default function Profile({ navigation }) {
         />
         <Header />
         <View
-          style={{ alignSelf: "center", justifyContent: "center", flex: 1 }}
+          style={{
+            alignSelf: "center",
+            justifyContent: "center",
+            height: "50%",
+            padding: "4%",
+            width: "100%",
+          }}
         >
           <Image
             source={data[page].photo}
-            style={{ width: 300, height: 300 }}
+            style={{
+              width: 250,
+              height: 250,
+              alignSelf: "center",
+            }}
           />
         </View>
         <View
@@ -102,6 +112,8 @@ export default function Profile({ navigation }) {
                   alignSelf: "center",
                   justifyContent: "center",
                 }}
+                disabled={page == 0 ? true : false}
+                disabledStyle={{ backgroundColor: "transparent" }}
                 onPress={() => {
                   setPage(page - 1);
                 }}
@@ -126,10 +138,7 @@ export default function Profile({ navigation }) {
                   justifyContent: "center",
                 }}
                 onPress={() => {
-                  console.log(page);
-                  console.log(`"${data[page].photo}"`);
-                  setPage(page + 1);
-                  console.log(page);
+                  page != 1 ? setPage(page + 1) : navigation.push("Permission");
                 }}
               />
             </View>

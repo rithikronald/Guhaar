@@ -175,9 +175,6 @@ export default function EditProfile({ navigation }) {
               alignItems: "center",
               justifyContent: "center",
             }}
-            onPress={() => {
-              navigation.push("ComplaintDetails");
-            }}
           >
             <Text style={{ fontSize: 25, fontFamily: "Light", color: "#fff" }}>
               SAVE
