@@ -35,7 +35,7 @@ export default function OTP({ navigation }) {
           style={{
             width: "100%",
             height: "20%",
-            backgroundColor: "#19539C",
+            backgroundColor: "#2a8ca7",
             padding: "4%",
             justifyContent: "center",
           }}
@@ -123,7 +123,7 @@ export default function OTP({ navigation }) {
           type="font-awesome-5"
           color="#fff"
           containerStyle={{
-            backgroundColor: "#19539C",
+            backgroundColor: "#2a8ca7",
             borderRadius: 100,
             width: 50,
             height: 50,

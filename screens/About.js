@@ -62,7 +62,7 @@ export default function About({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#19539C",
+    backgroundColor: "#2a8ca7",
     alignItems: "flex-start",
     justifyContent: "flex-start",
     paddingHorizontal: "10%",
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   titleText: {
-    color: "#19539C",
+    color: "#2a8ca7",
     fontSize: 22,
     fontWeight: "bold",
   },

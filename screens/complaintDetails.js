@@ -104,7 +104,7 @@ export default function ComplaintDetails({ navigation }) {
               style={{
                 width: 65,
                 height: 65,
-                backgroundColor: "#19539c",
+                backgroundColor: "#2a8ca7",
                 borderRadius: 10,
               }}
             ></View>

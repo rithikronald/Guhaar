@@ -34,14 +34,14 @@ export default function NewService({ navigation }) {
           style={{
             width: "100%",
             height: "20%",
-            backgroundColor: "#19539C",
+            backgroundColor: "#2a8ca7",
           }}
         >
           <Icon
             name="chevron-left"
             size={20}
             type="font-awesome-5"
-            color="#19539C"
+            color="#2a8ca7"
             containerStyle={{
               backgroundColor: "#fff",
               borderRadius: 100,
@@ -49,7 +49,7 @@ export default function NewService({ navigation }) {
               height: 30,
               justifyContent: "center",
               marginLeft: "5%",
-              marginVertical: "9%",
+              marginVertical: "9.5%",
             }}
           />
           <Text
@@ -67,10 +67,9 @@ export default function NewService({ navigation }) {
 
         <Text style={styles.blueFont}>Personal Information</Text>
 
-        <ScrollView style={{ flex: 1 }}>
+        <ScrollView style={{ width: "100%", alignSelf: "center" }}>
           <View style={styles.centerContent}>
             <TextInput placeholder="Tehsil" style={styles.inputStyle} />
-
             <View style={styles.rowInputs}>
               <TextInput
                 placeholder="Center"
@@ -92,7 +91,7 @@ export default function NewService({ navigation }) {
                   borderRadius: 6,
                   paddingHorizontal: "5%",
                   paddingVertical: "2%",
-                  fontFamily: "Bold",
+                  fontFamily: "Medium",
                 }}
               />
 
@@ -115,7 +114,7 @@ export default function NewService({ navigation }) {
                   borderRadius: 6,
                   paddingHorizontal: "5%",
                   paddingVertical: "2%",
-                  fontFamily: "Bold",
+                  fontFamily: "Medium",
                 }}
               />
             </View>
@@ -154,7 +153,7 @@ export default function NewService({ navigation }) {
                 paddingHorizontal: "5%",
                 paddingVertical: "2%",
                 lineHeight: 24,
-                fontFamily: "Bold",
+                fontFamily: "Medium",
               }}
             />
 
@@ -179,7 +178,7 @@ export default function NewService({ navigation }) {
                   borderRadius: 6,
                   paddingHorizontal: "5%",
                   paddingVertical: "2%",
-                  fontFamily: "Bold",
+                  fontFamily: "Medium",
                 }}
               />
 
@@ -202,7 +201,7 @@ export default function NewService({ navigation }) {
                   borderRadius: 6,
                   paddingHorizontal: "5%",
                   paddingVertical: "2%",
-                  fontFamily: "Bold",
+                  fontFamily: "Medium",
                 }}
               />
             </View>
@@ -210,25 +209,24 @@ export default function NewService({ navigation }) {
             <TextInput placeholder="Occupation" style={styles.inputStyle} />
             <TextInput placeholder="Mobile Number" style={styles.inputStyle} />
           </View>
-        </ScrollView>
-        <TouchableOpacity
-          style={styles.saveBtn}
-          onPress={() => {
-            navigation.push("NewService2");
-          }}
-        >
-          <Text
-            style={{
-              fontSize: 16,
-              color: "white",
-
-              marginHorizontal: "8%",
-              fontFamily: "Bold",
+          <TouchableOpacity
+            style={styles.saveBtn}
+            onPress={() => {
+              navigation.push("NewService2");
             }}
           >
-            NEXT →
-          </Text>
-        </TouchableOpacity>
+            <Text
+              style={{
+                fontSize: 16,
+                color: "white",
+                marginHorizontal: "8%",
+                fontFamily: "Bold",
+              }}
+            >
+              NEXT
+            </Text>
+          </TouchableOpacity>
+        </ScrollView>
       </View>
     );
   }
@@ -244,7 +242,7 @@ const styles = StyleSheet.create({
   header: {
     alignSelf: "stretch",
     height: "22%",
-    backgroundColor: "#19539C",
+    backgroundColor: "#2a8ca7",
   },
   backBtn: {
     borderWidth: 1,
@@ -271,7 +269,7 @@ const styles = StyleSheet.create({
     elevation: 10,
     padding: "8%",
     alignItems: "center",
-    backgroundColor: "#19539C",
+    backgroundColor: "#2a8ca7",
   },
   roundedBtnWhite: {
     width: "60%",
@@ -285,31 +283,23 @@ const styles = StyleSheet.create({
   centerContent: {
     marginTop: "2%",
     flex: 1,
-    flexDirection: "column",
-    width: "100%",
     alignItems: "center",
-    justifyContent: "flex-start",
   },
   saveBtn: {
     width: "28%",
-    position: "absolute",
-    bottom: 0,
     alignSelf: "flex-end",
-    marginBottom: "2%",
-    marginEnd: "2%",
-    borderRadius: 48,
-    elevation: 10,
+    borderRadius: 10,
     padding: "3%",
     alignItems: "center",
-    backgroundColor: "#19539C",
+    backgroundColor: "#2a8ca7",
+    margin: "6%",
   },
   blueFont: {
-    color: "#19539C",
+    color: "#2a8ca7",
     fontSize: 24,
-
     marginHorizontal: "10%",
-    paddingTop: "4%",
-    fontFamily: "Bold",
+    marginVertical: "3%",
+    fontFamily: "Medium",
   },
   inputStyle: {
     marginVertical: "2%",
@@ -327,7 +317,7 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     paddingHorizontal: "5%",
     paddingVertical: "2%",
-    fontFamily: "Bold",
+    fontFamily: "Medium",
   },
   rowInputs: {
     flexDirection: "row",

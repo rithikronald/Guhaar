@@ -8,6 +8,7 @@ import Profile from "./screens/Profile";
 import Dashboard from "./screens/DashBoard";
 import PublicService from "./screens/PublicService";
 import NewComplaints from "./screens/newComplaints";
+import NewComplaint2 from "./screens/NewComplaint2";
 import ChangeLanguage from "./screens/ChangeLanguage";
 import Permission from "./screens/Permission";
 import About from "./screens/About";
@@ -49,6 +50,7 @@ export default function App() {
         <Stack.Screen name="NewService2" component={NewService2} />
         <Stack.Screen name="ClosedComplaint" component={ClosedComplaint} />
         <Stack.Screen name="RejectedComplaint" component={RejectedComplaint} />
+        <Stack.Screen name="NewComplaint2" component={NewComplaint2} />
       </Stack.Navigator>
     </NavigationContainer>
   );

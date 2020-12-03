@@ -33,14 +33,14 @@ export default function ChangeLanguage({ navigation }) {
           style={{
             width: "100%",
             height: "20%",
-            backgroundColor: "#19539C",
+            backgroundColor: "#2a8ca7",
           }}
         >
           <Icon
             name="chevron-left"
             size={20}
             type="font-awesome-5"
-            color="#19539C"
+            color="#2a8ca7"
             containerStyle={{
               backgroundColor: "#fff",
               borderRadius: 100,
@@ -83,7 +83,7 @@ export default function ChangeLanguage({ navigation }) {
             borderRadius: 25,
             padding: 8,
             alignItems: "center",
-            backgroundColor: "#19539C",
+            backgroundColor: "#2a8ca7",
             justifyContent: "center",
             right: "3%",
           }}
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
   header: {
     alignSelf: "stretch",
     height: 160,
-    backgroundColor: "#19539C",
+    backgroundColor: "#2a8ca7",
   },
   backBtn: {
     borderWidth: 1,
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
     elevation: 10,
     padding: 10,
     alignItems: "center",
-    backgroundColor: "#19539C",
+    backgroundColor: "#2a8ca7",
   },
   roundedBtnWhite: {
     width: 260,
@@ -172,10 +172,10 @@ const styles = StyleSheet.create({
     elevation: 10,
     padding: 6,
     alignItems: "center",
-    backgroundColor: "#19539C",
+    backgroundColor: "#2a8ca7",
   },
   blueFont: {
-    color: "#19539C",
+    color: "#2a8ca7",
     fontSize: 26,
 
     fontWeight: "bold",

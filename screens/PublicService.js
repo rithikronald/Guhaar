@@ -48,7 +48,11 @@ export default function PublicService({ navigation }) {
           </View>
           <View style={{ flex: 1, flexDirection: "row", flexWrap: "wrap" }}>
             <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.push("NewService");
+                }}
+              >
                 <Image
                   style={{
                     width: 60,

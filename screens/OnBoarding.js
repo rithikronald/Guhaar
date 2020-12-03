@@ -47,7 +47,7 @@ export default function Profile({ navigation }) {
         <StatusBar style="auto" />
         <View
           style={{
-            backgroundColor: "#19539C",
+            backgroundColor: "#2a8ca7",
             borderRadius: window.width,
             width: window.width * 2,
             height: window.width * 2,
@@ -88,7 +88,7 @@ export default function Profile({ navigation }) {
               fontSize: 40,
               flexWrap: "wrap",
               margin: "6%",
-              color: "#19539C",
+              color: "#2a8ca7",
             }}
           >
             {data[page].text}
@@ -105,7 +105,7 @@ export default function Profile({ navigation }) {
                 type="font-awesome-5"
                 color="#fff"
                 containerStyle={{
-                  backgroundColor: "#19539C",
+                  backgroundColor: "#2a8ca7",
                   borderRadius: 100,
                   width: 50,
                   height: 50,
@@ -130,7 +130,7 @@ export default function Profile({ navigation }) {
                 type="font-awesome-5"
                 color="#fff"
                 containerStyle={{
-                  backgroundColor: "#19539C",
+                  backgroundColor: "#2a8ca7",
                   borderRadius: 100,
                   width: 50,
                   height: 50,

@@ -97,7 +97,7 @@ export default function Permission(props, { navigation }) {
               borderRadius: 20,
               alignItems: "center",
               justifyContent: "center",
-              backgroundColor: "#19539C",
+              backgroundColor: "#2a8ca7",
             }}
           >
             <Text style={{ color: "#fff", fontFamily: "Medium" }}>Allow</Text>

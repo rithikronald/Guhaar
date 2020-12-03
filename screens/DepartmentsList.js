@@ -45,12 +45,12 @@ export default function DepartmentsList({ navigation }) {
             }}
             value={search}
             containerStyle={{
-              width: "82%",
-              height: 60,
-              marginTop: "22%",
-              borderRadius: 40,
+              width: "86%",
+              marginTop: "10%",
+              borderRadius: 20,
+              backgroundColor: "#fff",
             }}
-            inputContainerStyle={{ borderRadius: 40 }}
+            inputContainerStyle={{ borderRadius: 40, backgroundColor: "#fff" }}
             round
             lightTheme
           />

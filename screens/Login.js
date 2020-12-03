@@ -31,7 +31,7 @@ export default function Profile({ navigation }) {
     return <ActivityIndicator />;
   } else {
     return (
-      <View style={{ flex: 1, backgroundColor: "#19539C" }}>
+      <View style={{ flex: 1, backgroundColor: "#2a8ca7" }}>
         <StatusBar style="auto" />
         <Header />
         <View style={{ flex: 1, justifyContent: "flex-end" }}>
@@ -72,7 +72,7 @@ export default function Profile({ navigation }) {
                 type="font-awesome-5"
                 color="#fff"
                 containerStyle={{
-                  backgroundColor: "#19539C",
+                  backgroundColor: "#2a8ca7",
                   borderRadius: 100,
                   width: 50,
                   height: 50,

@@ -31,7 +31,7 @@ export default function Profile({ navigation }) {
     return (
       <View
         style={{
-          backgroundColor: "#19539C",
+          backgroundColor: "#2a8ca7",
           flex: 1,
           justifyContent: "center",
           alignItems: "center",
