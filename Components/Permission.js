@@ -30,10 +30,10 @@ export default function Permission(props, { navigation }) {
     return (
       <View
         style={{
-          width: 300,
-          height: 460,
-          elevation: 8,
-          borderRadius: 20,
+          width: 280,
+          height: "88%",
+          elevation: 10,
+          borderRadius: 50,
           backgroundColor: "#fff",
           marginHorizontal: 10,
         }}
@@ -52,7 +52,7 @@ export default function Permission(props, { navigation }) {
               width: 200,
               padding: "4%",
               borderRadius: 100,
-              backgroundColor: "#F4C724",
+              backgroundColor: "#ffd54f",
               alignItems: "center",
               justifyContent: "center",
             }}
@@ -97,7 +97,8 @@ export default function Permission(props, { navigation }) {
               borderRadius: 20,
               alignItems: "center",
               justifyContent: "center",
-              backgroundColor: "#2a8ca7",
+              backgroundColor: "#1c549c",
+              elevation: 8,
             }}
           >
             <Text style={{ color: "#fff", fontFamily: "Medium" }}>Allow</Text>

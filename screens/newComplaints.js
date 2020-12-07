@@ -34,14 +34,14 @@ export default function NewComplaint({ navigation }) {
           style={{
             width: "100%",
             height: "20%",
-            backgroundColor: "#2a8ca7",
+            backgroundColor: "#1c549c",
           }}
         >
           <Icon
             name="chevron-left"
             size={20}
             type="font-awesome-5"
-            color="#2a8ca7"
+            color="#1c549c"
             containerStyle={{
               backgroundColor: "#fff",
               borderRadius: 100,
@@ -49,7 +49,7 @@ export default function NewComplaint({ navigation }) {
               height: 30,
               justifyContent: "center",
               marginLeft: "5%",
-              marginVertical: "9%",
+              marginVertical: "9.5%",
             }}
           />
           <Text
@@ -83,6 +83,7 @@ export default function NewComplaint({ navigation }) {
                 paddingHorizontal: "5%",
                 paddingVertical: "2%",
                 fontFamily: "Medium",
+                elevation: 8,
               }}
             />
 
@@ -99,6 +100,7 @@ export default function NewComplaint({ navigation }) {
                 paddingHorizontal: "5%",
                 paddingVertical: "2%",
                 fontFamily: "Medium",
+                elevation: 8,
               }}
             />
           </View>
@@ -120,6 +122,7 @@ export default function NewComplaint({ navigation }) {
               paddingHorizontal: "5%",
               paddingVertical: "2%",
               fontFamily: "Medium",
+              elevation: 8,
             }}
           />
           <TextInput placeholder="Occupation" style={styles.inputStyle} />
@@ -137,9 +140,10 @@ export default function NewComplaint({ navigation }) {
             borderRadius: 25,
             padding: 8,
             alignItems: "center",
-            backgroundColor: "#2a8ca7",
+            backgroundColor: "#1c549c",
             justifyContent: "center",
             right: "3%",
+            elevation: 8,
           }}
           onPress={() => {
             navigation.push("NewComplaint2");
@@ -171,7 +175,7 @@ const styles = StyleSheet.create({
   header: {
     alignSelf: "stretch",
     height: "20%",
-    backgroundColor: "#2a8ca7",
+    backgroundColor: "#1c549c",
   },
   backBtn: {
     borderWidth: 1,
@@ -197,7 +201,7 @@ const styles = StyleSheet.create({
     elevation: 10,
     padding: 10,
     alignItems: "center",
-    backgroundColor: "#2a8ca7",
+    backgroundColor: "#1c549c",
   },
   roundedBtnWhite: {
     width: 260,
@@ -218,7 +222,7 @@ const styles = StyleSheet.create({
   },
 
   blueFont: {
-    color: "#2a8ca7",
+    color: "#1c549c",
     fontSize: 24,
     fontWeight: "bold",
     marginHorizontal: "10%",
@@ -235,6 +239,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: "5%",
     paddingVertical: "2%",
     fontFamily: "Medium",
+    elevation: 8,
   },
   rowInputs: {
     flexDirection: "row",

@@ -33,30 +33,16 @@ export default function ChangeLanguage({ navigation }) {
           style={{
             width: "100%",
             height: "20%",
-            backgroundColor: "#2a8ca7",
+            backgroundColor: "#1c549c",
+            justifyContent: "flex-end",
+            padding: "5%",
           }}
         >
-          <Icon
-            name="chevron-left"
-            size={20}
-            type="font-awesome-5"
-            color="#2a8ca7"
-            containerStyle={{
-              backgroundColor: "#fff",
-              borderRadius: 100,
-              width: 30,
-              height: 30,
-              justifyContent: "center",
-              marginLeft: "5%",
-              marginVertical: "8%",
-            }}
-          />
           <Text
             style={{
               fontFamily: "Medium",
-              fontSize: 25,
+              fontSize: 28,
               color: "#fff",
-              marginLeft: "5%",
             }}
           >
             Change Language
@@ -64,10 +50,12 @@ export default function ChangeLanguage({ navigation }) {
         </View>
 
         <View style={styles.centerContent}>
-          <Image
-            source={require("../assets/images/language.png")}
-            style={{ width: 200, height: 200 }}
-          />
+          <View style={{ width: 300, height: 220, alignItems: "center" }}>
+            <Image
+              source={require("../assets/images/language.png")}
+              style={{ width: 200, height: 200 }}
+            />
+          </View>
           <View style={styles.roundedBtnBlue}>
             <Text style={styles.titleText}>English</Text>
           </View>
@@ -78,14 +66,15 @@ export default function ChangeLanguage({ navigation }) {
 
         <TouchableOpacity
           style={{
-            bottom: "5%",
+            bottom: "3%",
             alignSelf: "flex-end",
-            borderRadius: 25,
+            borderRadius: 15,
             padding: 8,
             alignItems: "center",
-            backgroundColor: "#2a8ca7",
+            backgroundColor: "#1c549c",
             justifyContent: "center",
-            right: "3%",
+            right: "4%",
+            elevation: 8,
           }}
           onPress={() => {
             navigation.push("Login");
@@ -97,6 +86,7 @@ export default function ChangeLanguage({ navigation }) {
               color: "white",
               marginHorizontal: "8%",
               fontFamily: "Bold",
+              marginVertical: "1%",
             }}
           >
             SAVE
@@ -110,14 +100,14 @@ export default function ChangeLanguage({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#E0E0E0",
+    backgroundColor: "#fff",
     alignItems: "flex-start",
     justifyContent: "flex-start",
   },
   header: {
     alignSelf: "stretch",
     height: 160,
-    backgroundColor: "#2a8ca7",
+    backgroundColor: "#1c549c",
   },
   backBtn: {
     borderWidth: 1,
@@ -143,7 +133,7 @@ const styles = StyleSheet.create({
     elevation: 10,
     padding: 10,
     alignItems: "center",
-    backgroundColor: "#2a8ca7",
+    backgroundColor: "#1c549c",
   },
   roundedBtnWhite: {
     width: 260,
@@ -172,10 +162,10 @@ const styles = StyleSheet.create({
     elevation: 10,
     padding: 6,
     alignItems: "center",
-    backgroundColor: "#2a8ca7",
+    backgroundColor: "#1c549c",
   },
   blueFont: {
-    color: "#2a8ca7",
+    color: "#1c549c",
     fontSize: 26,
 
     fontWeight: "bold",

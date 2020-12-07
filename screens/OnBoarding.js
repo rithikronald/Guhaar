@@ -43,11 +43,11 @@ export default function Profile({ navigation }) {
     return <ActivityIndicator />;
   } else {
     return (
-      <View style={{ flex: 1, backgroundColor: "#ededed" }}>
+      <View style={{ flex: 1, backgroundColor: "#fff" }}>
         <StatusBar style="auto" />
         <View
           style={{
-            backgroundColor: "#2a8ca7",
+            backgroundColor: "#1c549c",
             borderRadius: window.width,
             width: window.width * 2,
             height: window.width * 2,
@@ -57,7 +57,54 @@ export default function Profile({ navigation }) {
             bottom: "35%",
           }}
         />
-        <Header />
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "center",
+            margin: "3%",
+            marginTop: "12%",
+          }}
+        >
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "center",
+              flex: 3,
+            }}
+          >
+            <Image
+              style={{
+                width: 34,
+                height: 28,
+                marginLeft: "5%",
+                marginRight: "2%",
+              }}
+              source={require("../assets/images/logo-light.png")}
+            />
+            <View style={{ borderLeftColor: "#fff", borderLeftWidth: 1 }}>
+              <Text
+                style={{
+                  color: "#fff",
+                  fontSize: 16,
+                  paddingHorizontal: 15,
+                  fontFamily: "Light",
+                }}
+              >
+                Guhaar App
+              </Text>
+              <Text
+                style={{
+                  fontSize: 8,
+                  marginLeft: 10,
+                  color: "#fff",
+                  fontFamily: "Light",
+                }}
+              >
+                Baster Districk Administration , Chattisgarh
+              </Text>
+            </View>
+          </View>
+        </View>
         <View
           style={{
             alignSelf: "center",
@@ -88,12 +135,13 @@ export default function Profile({ navigation }) {
               fontSize: 40,
               flexWrap: "wrap",
               margin: "6%",
-              color: "#2a8ca7",
+              color: "#1c549c",
+              lineHeight: 43,
             }}
           >
             {data[page].text}
           </Text>
-          <View style={{ flexDirection: "row", alignItems: "flex-end" }}>
+          <View style={{ flexDirection: "row", alignSelf: "flex-end" }}>
             <View
               style={{
                 margin: "6%",
@@ -105,12 +153,13 @@ export default function Profile({ navigation }) {
                 type="font-awesome-5"
                 color="#fff"
                 containerStyle={{
-                  backgroundColor: "#2a8ca7",
+                  backgroundColor: "#1c549c",
                   borderRadius: 100,
                   width: 50,
                   height: 50,
                   alignSelf: "center",
                   justifyContent: "center",
+                  elevation: 8,
                 }}
                 disabled={page == 0 ? true : false}
                 disabledStyle={{ backgroundColor: "transparent" }}
@@ -130,12 +179,13 @@ export default function Profile({ navigation }) {
                 type="font-awesome-5"
                 color="#fff"
                 containerStyle={{
-                  backgroundColor: "#2a8ca7",
+                  backgroundColor: "#1c549c",
                   borderRadius: 100,
                   width: 50,
                   height: 50,
                   alignSelf: "center",
                   justifyContent: "center",
+                  elevation: 8,
                 }}
                 onPress={() => {
                   page != 1 ? setPage(page + 1) : navigation.push("Permission");

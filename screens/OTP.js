@@ -29,17 +29,31 @@ export default function OTP({ navigation }) {
     return <ActivityIndicator />;
   } else {
     return (
-      <View style={{ flex: 1, backgroundColor: "#ededed" }}>
+      <View style={{ flex: 1, backgroundColor: "#fff" }}>
         <StatusBar style="auto" />
         <View
           style={{
             width: "100%",
             height: "20%",
-            backgroundColor: "#2a8ca7",
-            padding: "4%",
+            backgroundColor: "#1c549c",
+            padding: "5%",
             justifyContent: "center",
           }}
         >
+          <Icon
+            name="chevron-left"
+            size={18}
+            type="font-awesome-5"
+            color="#1c549c"
+            containerStyle={{
+              backgroundColor: "#fff",
+              borderRadius: 100,
+              width: 25,
+              height: 25,
+              justifyContent: "center",
+              marginBottom: "4%",
+            }}
+          />
           <Text
             style={{
               color: "#fff",
@@ -51,7 +65,14 @@ export default function OTP({ navigation }) {
             We've send an OTP to your mobile number +91 9810116033
           </Text>
         </View>
-        <Text style={{ fontFamily: "Medium", fontSize: 20, margin: "5%" }}>
+        <Text
+          style={{
+            fontFamily: "Medium",
+            fontSize: 20,
+            margin: "5%",
+            marginTop: "8%",
+          }}
+        >
           One Time Password :
         </Text>
         <View
@@ -123,13 +144,14 @@ export default function OTP({ navigation }) {
           type="font-awesome-5"
           color="#fff"
           containerStyle={{
-            backgroundColor: "#2a8ca7",
+            backgroundColor: "#1c549c",
             borderRadius: 100,
             width: 50,
             height: 50,
             alignSelf: "flex-end",
             justifyContent: "center",
             margin: "10%",
+            elevation: 8,
           }}
           onPress={() => {
             navigation.push("HomeDashboard");

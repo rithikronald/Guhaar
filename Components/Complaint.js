@@ -142,7 +142,7 @@ export default function Profile(props, { navigation }) {
               height: 40,
               alignItems: "center",
               justifyContent: "center",
-              backgroundColor: "#2a8ca7",
+              backgroundColor: "#1c549c",
               borderRadius: 20,
             }}
             onPress={props.onPress}

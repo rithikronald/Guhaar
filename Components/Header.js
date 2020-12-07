@@ -14,7 +14,7 @@ import { Icon, Avatar } from "react-native-elements";
 import { useFonts } from "expo-font";
 import { TextInput } from "react-native-gesture-handler";
 
-export default function Header({ navigation }) {
+export default function Header(props, { navigation }) {
   const window = Dimensions.get("window");
   const [fontsLoaded] = useFonts({
     Black: require("../assets/fonts/Gotham-Black.otf"),
@@ -37,10 +37,12 @@ export default function Header({ navigation }) {
         }}
       >
         <Icon
-          name="arrow-back"
+          name={props.name}
           size={25}
           color="#fff"
+          type="font-awesome-5"
           style={{ flex: 1, marginLeft: "5%" }}
+          containerStyle={{ elevation: 8 }}
         />
         <View
           style={{
@@ -56,7 +58,7 @@ export default function Header({ navigation }) {
               marginHorizontal: "5%",
               borderRadius: 100,
             }}
-            source={require("../assets/images/logo.png")}
+            source={require("../assets/images/logo-light.png")}
           />
           <View style={{ borderLeftColor: "#fff", borderLeftWidth: 1 }}>
             <Text

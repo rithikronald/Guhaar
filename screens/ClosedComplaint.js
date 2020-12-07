@@ -16,7 +16,7 @@ import { useFonts } from "expo-font";
 import BackGround from "../Components/background";
 import Header from "../Components/Header";
 
-export default function Profile({ navigation }) {
+export default function ClosedComplaint({ navigation }) {
   const [search, setSearch] = useState("");
   const window = Dimensions.get("window");
 
@@ -41,7 +41,7 @@ export default function Profile({ navigation }) {
             flex: 1,
             alignItems: "center",
             justifyContent: "center",
-            marginTop: "5%",
+            marginTop: "30%",
           }}
         >
           <Image
@@ -71,7 +71,7 @@ export default function Profile({ navigation }) {
             style={{
               width: 150,
               height: 40,
-              backgroundColor: "#2a8ca7",
+              backgroundColor: "#1c549c",
               alignItems: "center",
               justifyContent: "center",
               margin: "3%",

@@ -6,6 +6,7 @@ import {
   Dimensions,
   FlatList,
   Text,
+  Image,
 } from "react-native";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 import { Avatar, Icon } from "react-native-elements";
@@ -31,7 +32,7 @@ export default function Profile({ navigation }) {
     return (
       <View
         style={{
-          backgroundColor: "#2a8ca7",
+          backgroundColor: "#1c549c",
           flex: 1,
           justifyContent: "center",
           alignItems: "center",
@@ -46,12 +47,16 @@ export default function Profile({ navigation }) {
             margin: "12%",
           }}
         >
-          <Text style={{ fontSize: 40, fontFamily: "Medium", color: "#fff" }}>
-            Header
-          </Text>
+          <Image
+            source={require("../assets/images/logo-light.png")}
+            style={{ width: 160, height: 108 }}
+          />
         </View>
         <ScrollView
-          style={{ alignSelf: "center", marginTop: "4%" }}
+          style={{
+            alignSelf: "center",
+          }}
+          contentContainerStyle={{ paddingLeft: "10%" }}
           horizontal
           showsHorizontalScrollIndicator={false}
         >
@@ -69,9 +74,10 @@ export default function Profile({ navigation }) {
             paddingHorizontal: 10,
             paddingVertical: 4,
             borderRadius: 100,
-            bottom: "6%",
+            bottom: "4%",
             alignSelf: "flex-end",
             right: "8%",
+            elevation: 8,
           }}
           onPress={() => {
             navigation.push("ChangeLanguage");

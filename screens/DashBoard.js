@@ -35,7 +35,7 @@ export default function Profile({ navigation }) {
       <View style={{ flex: 1, backgroundColor: "#ededed" }}>
         <StatusBar style="auto" />
         <BackGround />
-        <Header />
+        <Header name="bars" />
         <View
           style={{
             flexDirection: "row",
@@ -52,7 +52,7 @@ export default function Profile({ navigation }) {
           >
             <Text
               style={{
-                fontSize: 60,
+                fontSize: 55,
                 fontFamily: "Medium",
                 color: "#dddd",
               }}
@@ -61,7 +61,7 @@ export default function Profile({ navigation }) {
             </Text>
             <Text
               style={{
-                fontSize: 12,
+                fontSize: 11,
                 fontFamily: "Book",
                 textAlign: "center",
                 color: "#fff",
@@ -73,10 +73,10 @@ export default function Profile({ navigation }) {
           </View>
           <View
             style={{
-              width: "1%",
-              backgroundColor: "#fff",
+              width: "0.5%",
+              backgroundColor: "#dddd",
               alignSelf: "center",
-              height: 70,
+              height: 90,
             }}
           />
           <View
@@ -88,7 +88,7 @@ export default function Profile({ navigation }) {
           >
             <Text
               style={{
-                fontSize: 60,
+                fontSize: 55,
                 fontFamily: "Medium",
                 color: "#dddd",
               }}
@@ -97,7 +97,7 @@ export default function Profile({ navigation }) {
             </Text>
             <Text
               style={{
-                fontSize: 12,
+                fontSize: 11,
                 fontFamily: "Book",
                 textAlign: "center",
                 color: "#fff",
@@ -124,6 +124,121 @@ export default function Profile({ navigation }) {
             <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
               <TouchableOpacity
                 onPress={() => {
+                  navigation.push("MyComplaint");
+                }}
+              >
+                <Image
+                  style={{
+                    width: 60,
+                    height: 60,
+                    alignSelf: "center",
+                  }}
+                  source={require("../assets/images/lodge-complaint.png")}
+                />
+
+                <Text
+                  style={{
+                    fontFamily: "Book",
+                    fontSize: 12,
+                    textAlign: "center",
+                    paddingVertical: 10,
+                    lineHeight: 14,
+                  }}
+                >
+                  My Pending Complaint
+                </Text>
+              </TouchableOpacity>
+            </View>
+            <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.push("ClosedComplaint");
+                }}
+              >
+                <Image
+                  style={{
+                    width: 60,
+                    height: 60,
+                    alignSelf: "center",
+                  }}
+                  source={require("../assets/images/my-complaint.png")}
+                />
+                <Text
+                  style={{
+                    fontFamily: "Book",
+                    fontSize: 12,
+                    textAlign: "center",
+                    paddingVertical: 10,
+                    lineHeight: 14,
+                  }}
+                >
+                  My Resolved Complaints
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+          <View style={{ flex: 1, flexDirection: "row", flexWrap: "wrap" }}>
+            <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.push("ClosedComplaint");
+                }}
+              >
+                <Image
+                  style={{
+                    width: 60,
+                    height: 60,
+                    alignSelf: "center",
+                  }}
+                  source={require("../assets/images/closed-complaint.png")}
+                />
+
+                <Text
+                  style={{
+                    fontFamily: "Book",
+                    fontSize: 12,
+                    textAlign: "center",
+                    paddingVertical: 10,
+                    lineHeight: 14,
+                  }}
+                >
+                  Closed Complaint
+                </Text>
+              </TouchableOpacity>
+            </View>
+            <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.push("ClosedComplaint");
+                }}
+              >
+                <Image
+                  style={{
+                    width: 60,
+                    height: 60,
+                    alignSelf: "center",
+                  }}
+                  source={require("../assets/images/rejected-complaint.png")}
+                />
+
+                <Text
+                  style={{
+                    fontFamily: "Book",
+                    fontSize: 12,
+                    textAlign: "center",
+                    paddingVertical: 10,
+                    lineHeight: 14,
+                  }}
+                >
+                  Rejected Complaint
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+          <View style={{ flex: 1, flexDirection: "row", flexWrap: "wrap" }}>
+            <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
+              <TouchableOpacity
+                onPress={() => {
                   navigation.push("PublicService");
                 }}
               >
@@ -131,129 +246,51 @@ export default function Profile({ navigation }) {
                   style={{
                     width: 60,
                     height: 60,
-                  }}
-                  source={require("../assets/images/lodge-complaint.png")}
-                />
-              </TouchableOpacity>
-              <Text
-                style={{
-                  fontFamily: "Book",
-                  fontSize: 12,
-                  textAlign: "center",
-                  paddingVertical: 10,
-                }}
-              >
-                My Pending Complaint
-              </Text>
-            </View>
-            <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
-              <TouchableOpacity>
-                <Image
-                  style={{
-                    width: 60,
-                    height: 60,
-                  }}
-                  source={require("../assets/images/my-complaint.png")}
-                />
-              </TouchableOpacity>
-              <Text
-                style={{
-                  fontFamily: "Book",
-                  fontSize: 12,
-                  textAlign: "center",
-                  paddingVertical: 10,
-                }}
-              >
-                My Complaint
-              </Text>
-            </View>
-          </View>
-          <View style={{ flex: 1, flexDirection: "row", flexWrap: "wrap" }}>
-            <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
-              <TouchableOpacity>
-                <Image
-                  style={{
-                    width: 60,
-                    height: 60,
-                  }}
-                  source={require("../assets/images/closed-complaint.png")}
-                />
-              </TouchableOpacity>
-              <Text
-                style={{
-                  fontFamily: "Book",
-                  fontSize: 12,
-                  textAlign: "center",
-                  paddingVertical: 10,
-                }}
-              >
-                Closed Complaint
-              </Text>
-            </View>
-            <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
-              <TouchableOpacity>
-                <Image
-                  style={{
-                    width: 60,
-                    height: 60,
-                  }}
-                  source={require("../assets/images/rejected-complaint.png")}
-                />
-              </TouchableOpacity>
-              <Text
-                style={{
-                  fontFamily: "Book",
-                  fontSize: 12,
-                  textAlign: "center",
-                  paddingVertical: 10,
-                }}
-              >
-                Rejected Complaint
-              </Text>
-            </View>
-          </View>
-          <View style={{ flex: 1, flexDirection: "row", flexWrap: "wrap" }}>
-            <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
-              <TouchableOpacity>
-                <Image
-                  style={{
-                    width: 60,
-                    height: 60,
+                    alignSelf: "center",
                   }}
                   source={require("../assets/images/public-service.png")}
                 />
+
+                <Text
+                  style={{
+                    fontFamily: "Book",
+                    fontSize: 12,
+                    textAlign: "center",
+                    paddingVertical: 10,
+                    lineHeight: 14,
+                  }}
+                >
+                  Public Service
+                </Text>
               </TouchableOpacity>
-              <Text
-                style={{
-                  fontFamily: "Book",
-                  fontSize: 12,
-                  textAlign: "center",
-                  paddingVertical: 10,
-                }}
-              >
-                Public Service
-              </Text>
             </View>
             <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.push("DepartmentsList");
+                }}
+              >
                 <Image
                   style={{
                     width: 60,
                     height: 60,
+                    alignSelf: "center",
                   }}
                   source={require("../assets/images/all-departments.png")}
                 />
+
+                <Text
+                  style={{
+                    fontFamily: "Book",
+                    fontSize: 12,
+                    textAlign: "center",
+                    paddingVertical: 10,
+                    lineHeight: 14,
+                  }}
+                >
+                  All Departments
+                </Text>
               </TouchableOpacity>
-              <Text
-                style={{
-                  fontFamily: "Book",
-                  fontSize: 12,
-                  textAlign: "center",
-                  paddingVertical: 10,
-                }}
-              >
-                All Departments
-              </Text>
             </View>
           </View>
         </View>

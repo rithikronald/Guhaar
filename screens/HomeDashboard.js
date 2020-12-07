@@ -35,7 +35,7 @@ export default function HomeDashboard({ navigation }) {
       <View style={{ flex: 1, backgroundColor: "#ededed" }}>
         <StatusBar style="auto" />
         <BackGround />
-        <Header />
+        <Header name="bars" />
         <View
           style={{
             flexDirection: "row",
@@ -52,7 +52,7 @@ export default function HomeDashboard({ navigation }) {
           >
             <Text
               style={{
-                fontSize: 60,
+                fontSize: 55,
                 fontFamily: "Medium",
                 color: "#dddd",
               }}
@@ -61,7 +61,7 @@ export default function HomeDashboard({ navigation }) {
             </Text>
             <Text
               style={{
-                fontSize: 12,
+                fontSize: 10,
                 fontFamily: "Book",
                 textAlign: "center",
                 color: "#fff",
@@ -73,7 +73,7 @@ export default function HomeDashboard({ navigation }) {
           </View>
           <View
             style={{
-              width: "1%",
+              width: "0.5%",
               backgroundColor: "#dddd",
               alignSelf: "center",
               height: 90,
@@ -88,7 +88,7 @@ export default function HomeDashboard({ navigation }) {
           >
             <Text
               style={{
-                fontSize: 60,
+                fontSize: 55,
                 fontFamily: "Medium",
                 color: "#dddd",
               }}
@@ -97,7 +97,7 @@ export default function HomeDashboard({ navigation }) {
             </Text>
             <Text
               style={{
-                fontSize: 12,
+                fontSize: 10,
                 fontFamily: "Book",
                 textAlign: "center",
                 color: "#fff",
@@ -111,7 +111,7 @@ export default function HomeDashboard({ navigation }) {
         <View
           style={{
             width: "86%",
-            elevation: 8,
+            elevation: 10,
             height: "60%",
             padding: "4%",
             borderRadius: 20,
@@ -137,7 +137,7 @@ export default function HomeDashboard({ navigation }) {
               </TouchableOpacity>
               <Text
                 style={{
-                  fontFamily: "Book",
+                  fontFamily: "Medium",
                   fontSize: 12,
                   textAlign: "center",
                   paddingVertical: 10,
@@ -162,7 +162,7 @@ export default function HomeDashboard({ navigation }) {
               </TouchableOpacity>
               <Text
                 style={{
-                  fontFamily: "Book",
+                  fontFamily: "Medium",
                   fontSize: 12,
                   textAlign: "center",
                   paddingVertical: 10,
@@ -189,7 +189,7 @@ export default function HomeDashboard({ navigation }) {
               </TouchableOpacity>
               <Text
                 style={{
-                  fontFamily: "Book",
+                  fontFamily: "Medium",
                   fontSize: 12,
                   textAlign: "center",
                   paddingVertical: 10,
@@ -214,7 +214,7 @@ export default function HomeDashboard({ navigation }) {
               </TouchableOpacity>
               <Text
                 style={{
-                  fontFamily: "Book",
+                  fontFamily: "Medium",
                   fontSize: 12,
                   textAlign: "center",
                   paddingVertical: 10,
@@ -241,7 +241,7 @@ export default function HomeDashboard({ navigation }) {
               </TouchableOpacity>
               <Text
                 style={{
-                  fontFamily: "Book",
+                  fontFamily: "Medium",
                   fontSize: 12,
                   textAlign: "center",
                   paddingVertical: 10,
@@ -266,7 +266,7 @@ export default function HomeDashboard({ navigation }) {
               </TouchableOpacity>
               <Text
                 style={{
-                  fontFamily: "Book",
+                  fontFamily: "Medium",
                   fontSize: 12,
                   textAlign: "center",
                   paddingVertical: 10,

@@ -49,7 +49,7 @@ export default function Profile({ navigation }) {
             style={{
               backgroundColor: "#fff",
               width: "100%",
-              height: "30%",
+              height: "40%",
               padding: "6%",
             }}
           >
@@ -64,17 +64,51 @@ export default function Profile({ navigation }) {
             <TextInput
               placeholder="Enter Phone Number"
               style={{
-                height: 50,
+                height: 40,
                 width: "80%",
                 borderBottomColor: "#c1c1c1",
                 borderBottomWidth: 1,
-                marginVertical: "4%",
+                marginVertical: "3%",
                 fontSize: 18,
                 fontFamily: "Book",
               }}
               keyboardType="number-pad"
               maxLength={10}
             />
+            <Text
+              style={{
+                fontFamily: "Medium",
+                fontSize: 16,
+              }}
+            >
+              Password
+            </Text>
+            <TextInput
+              placeholder="Enter the password"
+              style={{
+                height: 40,
+                width: "80%",
+                borderBottomColor: "#c1c1c1",
+                borderBottomWidth: 1,
+                marginVertical: "3%",
+                fontSize: 18,
+                fontFamily: "Book",
+              }}
+              keyboardType="number-pad"
+              maxLength={10}
+            />
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+            >
+              <TouchableOpacity>
+                <Text style={{ color: "#19359c", fontFamily: "Book" }}>
+                  Forgot Your Password ?
+                </Text>
+              </TouchableOpacity>
+            </View>
             <View style={{ flex: 1 }}>
               <Icon
                 name="chevron-right"
@@ -89,35 +123,12 @@ export default function Profile({ navigation }) {
                   justifyContent: "center",
                   alignSelf: "flex-end",
                   elevation: 8,
+                  marginTop: "3%",
                 }}
                 onPress={() => {
-                  navigation.push("OTP");
+                  navigation.push("Dashboard");
                 }}
               />
-            </View>
-            <View
-              style={{
-                flexDirection: "row",
-                alignSelf: "center",
-                alignItems: "center",
-              }}
-            >
-              <Text style={{ fontFamily: "Book" }}>Department Login</Text>
-              <TouchableOpacity
-                onPress={() => {
-                  navigation.push("DeptLogin");
-                }}
-              >
-                <Text
-                  style={{
-                    color: "#19359c",
-                    fontFamily: "Medium",
-                    marginLeft: "3%",
-                  }}
-                >
-                  Click here!
-                </Text>
-              </TouchableOpacity>
             </View>
           </View>
         </View>

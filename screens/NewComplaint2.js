@@ -36,14 +36,14 @@ export default function NewComplaint({ navigation }) {
           style={{
             width: "100%",
             height: "20%",
-            backgroundColor: "#2a8ca7",
+            backgroundColor: "#1c549c",
           }}
         >
           <Icon
             name="chevron-left"
             size={20}
             type="font-awesome-5"
-            color="#2a8ca7"
+            color="#1c549c"
             containerStyle={{
               backgroundColor: "#fff",
               borderRadius: 100,
@@ -51,7 +51,7 @@ export default function NewComplaint({ navigation }) {
               height: 30,
               justifyContent: "center",
               marginLeft: "5%",
-              marginVertical: "9%",
+              marginVertical: "9.5%",
             }}
           />
           <Text
@@ -66,13 +66,13 @@ export default function NewComplaint({ navigation }) {
             Lodge New Complaints
           </Text>
         </View>
-        <View style={{ flex: 1, paddingHorizontal: "6%" }}>
+        <View style={{ flex: 1, paddingHorizontal: "5%" }}>
           <Text
             style={{
               fontFamily: "Medium",
               fontSize: 25,
-              marginVertical: "4%",
-              color: "#2a8ca7",
+              marginVertical: "2%",
+              color: "#1c549c",
             }}
           >
             Complaint Details
@@ -81,51 +81,54 @@ export default function NewComplaint({ navigation }) {
             style={{
               alignSelf: "center",
               width: "100%",
-              marginVertical: "2%",
             }}
+            contentContainerStyle={{ padding: "2%" }}
             showsVerticalScrollIndicator={false}
           >
             <TextInput
               placeholder="Block Name"
               style={{
                 color: "#c1c1c1",
-                height: 50,
+                height: 46,
                 borderRadius: 10,
                 backgroundColor: "#fff",
                 fontSize: 20,
-                fontFamily: "Bold",
+                fontFamily: "Medium",
                 paddingLeft: 15,
-                marginVertical: "3%",
+                marginVertical: "2%",
                 padding: 10,
+                elevation: 8,
               }}
             />
             <TextInput
               placeholder="Subject of Complaint"
               style={{
                 color: "#c1c1c1",
-                height: 50,
-                marginVertical: "3%",
+                height: 46,
+                marginVertical: "2%",
                 borderRadius: 10,
                 backgroundColor: "#fff",
                 fontSize: 20,
-                fontFamily: "Bold",
+                fontFamily: "Medium",
                 paddingLeft: 15,
                 padding: 10,
+                elevation: 8,
               }}
             />
             <TextInput
-              placeholder="Block Name"
+              placeholder="Enter Your Complaint"
               style={{
                 color: "#c1c1c1",
                 height: 150,
                 borderRadius: 10,
                 backgroundColor: "#fff",
                 fontSize: 20,
-                fontFamily: "Bold",
+                fontFamily: "Medium",
                 paddingLeft: 15,
                 marginVertical: "2%",
                 textAlignVertical: "top",
                 padding: 10,
+                elevation: 8,
               }}
             />
             <View
@@ -133,8 +136,10 @@ export default function NewComplaint({ navigation }) {
                 width: "96%",
                 height: 50,
                 borderRadius: 10,
-                backgroundColor: "#2a8ca7",
+                backgroundColor: "#1c549c",
                 marginVertical: "3%",
+                marginTop: "4%",
+                elevation: 8,
               }}
             >
               <View
@@ -146,7 +151,7 @@ export default function NewComplaint({ navigation }) {
                 <View
                   style={{
                     justifyContent: "center",
-                    paddingHorizontal: "3%",
+                    paddingHorizontal: "2%",
                     borderRadius: 10,
                     flex: 5,
                   }}
@@ -166,14 +171,13 @@ export default function NewComplaint({ navigation }) {
                     width: 60,
                     alignSelf: "center",
                     left: 10,
-                    elevation: 4,
                   }}
                 >
                   <Icon
                     name="microphone-alt"
                     type="font-awesome-5"
                     size={25}
-                    color="#2a8ca7"
+                    color="#1c549c"
                   />
                 </View>
               </View>
@@ -182,10 +186,10 @@ export default function NewComplaint({ navigation }) {
               style={{
                 width: "100%",
                 height: 50,
-
+                elevation: 8,
                 borderRadius: 10,
                 backgroundColor: "#fff",
-                marginVertical: "3%",
+                marginVertical: "2%",
               }}
             >
               <View
@@ -199,14 +203,14 @@ export default function NewComplaint({ navigation }) {
                     name="camera"
                     type="font-awesome-5"
                     size={30}
-                    color="#2a8ca7"
+                    color="#1c549c"
                   />
                 </View>
                 <View
                   style={{
                     flex: 5,
                     justifyContent: "center",
-                    backgroundColor: "#2a8ca7",
+                    backgroundColor: "#1c549c",
                     paddingHorizontal: "3%",
                     borderTopEndRadius: 10,
                     borderBottomEndRadius: 10,
@@ -224,10 +228,10 @@ export default function NewComplaint({ navigation }) {
               style={{
                 width: "100%",
                 height: 50,
-
+                elevation: 8,
                 borderRadius: 10,
                 backgroundColor: "#fff",
-                marginVertical: "3%",
+                marginVertical: "2%",
               }}
             >
               <View
@@ -241,14 +245,14 @@ export default function NewComplaint({ navigation }) {
                     name="file"
                     type="font-awesome-5"
                     size={30}
-                    color="#2a8ca7"
+                    color="#1c549c"
                   />
                 </View>
                 <View
                   style={{
                     flex: 5,
                     justifyContent: "center",
-                    backgroundColor: "#2a8ca7",
+                    backgroundColor: "#1c549c",
                     paddingHorizontal: "3%",
                     borderTopEndRadius: 10,
                     borderBottomEndRadius: 10,
@@ -272,6 +276,7 @@ export default function NewComplaint({ navigation }) {
                 alignItems: "center",
                 justifyContent: "center",
                 alignSelf: "flex-end",
+                elevation: 8,
               }}
             >
               <Text style={{ color: "#fff", fontFamily: "Bold", fontSize: 20 }}>

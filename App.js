@@ -21,6 +21,7 @@ import NewService2 from "./screens/NewService2";
 import HomeDashboard from "./screens/HomeDashboard";
 import ClosedComplaint from "./screens/ClosedComplaint";
 import RejectedComplaint from "./screens/RejectedComplaint";
+import DeptLogin from "./screens/DeptLogin";
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -51,6 +52,7 @@ export default function App() {
         <Stack.Screen name="ClosedComplaint" component={ClosedComplaint} />
         <Stack.Screen name="RejectedComplaint" component={RejectedComplaint} />
         <Stack.Screen name="NewComplaint2" component={NewComplaint2} />
+        <Stack.Screen name="DeptLogin" component={DeptLogin} />
       </Stack.Navigator>
     </NavigationContainer>
   );

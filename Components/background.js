@@ -20,14 +20,14 @@ export default function Background({ navigation }) {
     return (
       <View
         style={{
-          backgroundColor: "#2a8ca7",
+          backgroundColor: "#1c549c",
           borderRadius: window.width,
           width: window.width * 2,
           height: window.width * 2,
           marginLeft: -(window.width / 2),
           position: "absolute",
           overflow: "hidden",
-          bottom: "65%",
+          bottom: "60%",
         }}
       />
     );
