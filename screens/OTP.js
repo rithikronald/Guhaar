@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   View,
   ActivityIndicator,
@@ -10,12 +10,36 @@ import {
 } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { Icon } from "react-native-elements";
+import OTPTextInput from "react-native-otp-textinput";
+import axios from "axios";
 
 import { useFonts } from "expo-font";
 
-export default function OTP({ navigation }) {
-  const [search, setSearch] = useState("");
-  const window = Dimensions.get("window");
+export default function OTP({ navigation, route }) {
+  const otpInput = useRef(null);
+
+  const [otp, setOtp] = useState(0);
+
+  function post() {
+    var data = new FormData();
+    data.append("mobile", route.params.mobile);
+    data.append("key", route.params.key);
+    data.append("otp", otp);
+    console.log(data);
+
+    axios
+      .post("https://guhaar.online/GuhaarNewAPi/index.php/verify-otp", data)
+      .then(function (response) {
+        console.log("Request Success");
+        console.log(JSON.stringify(response.data));
+        response.data.flag == true
+          ? navigation.push("HomeDashboard")
+          : alert("OTP Not Verified");
+      })
+      .catch(function (error) {
+        console.log(error.message);
+      });
+  }
 
   const [fontsLoaded] = useFonts({
     Black: require("../assets/fonts/Gotham-Black.otf"),
@@ -36,8 +60,6 @@ export default function OTP({ navigation }) {
             width: "100%",
             height: "20%",
             backgroundColor: "#1c549c",
-            padding: "5%",
-            justifyContent: "center",
           }}
         >
           <Icon
@@ -50,8 +72,9 @@ export default function OTP({ navigation }) {
               borderRadius: 100,
               width: 25,
               height: 25,
+              marginLeft: "5%",
+              marginVertical: "6%",
               justifyContent: "center",
-              marginBottom: "4%",
             }}
           />
           <Text
@@ -60,9 +83,10 @@ export default function OTP({ navigation }) {
               fontFamily: "Book",
               fontSize: 18,
               lineHeight: 30,
+              marginLeft: "5%",
             }}
           >
-            We've send an OTP to your mobile number +91 9810116033
+            We've send an OTP to your mobile number +91 {route.params.mobile}
           </Text>
         </View>
         <Text
@@ -84,60 +108,14 @@ export default function OTP({ navigation }) {
             flexDirection: "row",
           }}
         >
-          <TextInput
-            style={{
-              width: 50,
-              height: 50,
-              borderBottomColor: "#c1c1c1",
-              borderBottomWidth: 4,
-              fontFamily: "Bold",
-              fontSize: 30,
-              textAlign: "center",
+          <OTPTextInput
+            ref={(e) => (otpInput.current = e)}
+            inputCount={6}
+            handleTextChange={(text) => {
+              setOtp(text);
             }}
-            keyboardType="number-pad"
-            maxLength={1}
-          />
-          <TextInput
-            style={{
-              width: 50,
-              height: 50,
-              borderBottomColor: "#c1c1c1",
-              borderBottomWidth: 4,
-              fontFamily: "Bold",
-              fontSize: 30,
-              textAlign: "center",
-            }}
-            keyboardType="number-pad"
-            maxLength={1}
-          />
-          <TextInput
-            style={{
-              width: 50,
-              height: 50,
-              borderBottomColor: "#c1c1c1",
-              borderBottomWidth: 4,
-              fontFamily: "Bold",
-              fontSize: 30,
-              textAlign: "center",
-            }}
-            keyboardType="number-pad"
-            maxLength={1}
-          />
-          <TextInput
-            style={{
-              width: 50,
-              height: 50,
-              borderBottomColor: "#c1c1c1",
-              borderBottomWidth: 4,
-              fontFamily: "Bold",
-              fontSize: 30,
-              textAlign: "center",
-            }}
-            keyboardType="number-pad"
-            maxLength={1}
           />
         </View>
-
         <Icon
           name="chevron-right"
           size={30}
@@ -154,10 +132,94 @@ export default function OTP({ navigation }) {
             elevation: 8,
           }}
           onPress={() => {
-            navigation.push("HomeDashboard");
+            post();
           }}
         />
       </View>
     );
   }
+}
+
+{
+  /*
+<TextInput
+            style={{
+              width: 30,
+              height: 50,
+              borderBottomColor: "#c1c1c1",
+              borderBottomWidth: 4,
+              fontFamily: "Bold",
+              fontSize: 30,
+              textAlign: "center",
+            }}
+            keyboardType="number-pad"
+            maxLength={1}
+          />
+          <TextInput
+            style={{
+              width: 30,
+              height: 50,
+              borderBottomColor: "#c1c1c1",
+              borderBottomWidth: 4,
+              fontFamily: "Bold",
+              fontSize: 30,
+              textAlign: "center",
+            }}
+            keyboardType="number-pad"
+            maxLength={1}
+          />
+          <TextInput
+            style={{
+              width: 30,
+              height: 50,
+              borderBottomColor: "#c1c1c1",
+              borderBottomWidth: 4,
+              fontFamily: "Bold",
+              fontSize: 30,
+              textAlign: "center",
+            }}
+            keyboardType="number-pad"
+            maxLength={1}
+          />
+          <TextInput
+            style={{
+              width: 30,
+              height: 50,
+              borderBottomColor: "#c1c1c1",
+              borderBottomWidth: 4,
+              fontFamily: "Bold",
+              fontSize: 30,
+              textAlign: "center",
+            }}
+            keyboardType="number-pad"
+            maxLength={1}
+          />
+          <TextInput
+            style={{
+              width: 30,
+              height: 50,
+              borderBottomColor: "#c1c1c1",
+              borderBottomWidth: 4,
+              fontFamily: "Bold",
+              fontSize: 30,
+              textAlign: "center",
+            }}
+            keyboardType="number-pad"
+            maxLength={1}
+            ref={pin5Ref}
+          />
+          <TextInput
+            style={{
+              width: 30,
+              height: 50,
+              borderBottomColor: "#c1c1c1",
+              borderBottomWidth: 4,
+              fontFamily: "Bold",
+              fontSize: 30,
+              textAlign: "center",
+            }}
+            keyboardType="number-pad"
+            maxLength={1}
+          />
+*/
 }

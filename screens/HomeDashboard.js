@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { Avatar } from "react-native-elements";
+import axios from "axios";
 
 import { useFonts } from "expo-font";
 
@@ -19,6 +20,22 @@ import Header from "../Components/Header";
 export default function HomeDashboard({ navigation }) {
   const [search, setSearch] = useState("");
   const window = Dimensions.get("window");
+
+  function departmentListpost() {
+    axios
+      .post("https://guhaar.online/GuhaarNewAPi/index.php/get-department-list/")
+      .then(function (response) {
+        console.log("Request Success");
+        console.log(JSON.stringify(response.data));
+
+        navigation.push("DepartmentsList", {
+          data: response.data.DepartmentList,
+        });
+      })
+      .catch(function (error) {
+        console.log(error.message);
+      });
+  }
 
   const [fontsLoaded] = useFonts({
     Black: require("../assets/fonts/Gotham-Black.otf"),
@@ -253,7 +270,7 @@ export default function HomeDashboard({ navigation }) {
             <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
               <TouchableOpacity
                 onPress={() => {
-                  navigation.push("DepartmentsList");
+                  departmentListpost();
                 }}
               >
                 <Image

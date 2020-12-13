@@ -10,14 +10,15 @@ import {
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { SearchBar, Icon } from "react-native-elements";
 import DepartmentCard from "../Components/DepartmentCard";
-import DataList from "../data/DepartmenList";
 
 import { useFonts } from "expo-font";
 
 import BackGround from "../Components/background";
 import Header from "../Components/Header";
 
-export default function DepartmentsList({ navigation }) {
+export default function DepartmentsList({ navigation, route }) {
+  const departmentsList = route.params.data;
+
   const [search, setSearch] = useState("");
   const window = Dimensions.get("window");
 
@@ -56,12 +57,12 @@ export default function DepartmentsList({ navigation }) {
           />
           <FlatList
             style={{ flex: 1, width: "100%", marginTop: "6%" }}
-            data={DataList}
+            data={departmentsList}
             renderItem={({ item }) => (
               <DepartmentCard
-                name={item.department}
-                sub_1={item.sub_1}
-                sub_2={item.sub_2}
+                deptTitle={item.deptTitle}
+                deptAddress={item.deptAddress}
+                createdOn={item.createdOn}
                 onPress={() => {
                   navigation.push("Profile");
                 }}

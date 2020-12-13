@@ -4,9 +4,6 @@ import { Icon } from "react-native-elements";
 import { useFonts } from "expo-font";
 
 export default function DepartmentCard(props, { navigation }) {
-  const [search, setSearch] = useState("");
-  const window = Dimensions.get("window");
-
   const [fontsLoaded] = useFonts({
     Black: require("../assets/fonts/Gotham-Black.otf"),
     Bold: require("../assets/fonts/GothamBold.ttf"),
@@ -37,17 +34,21 @@ export default function DepartmentCard(props, { navigation }) {
       >
         <View style={{ flex: 4 }}>
           <Text style={{ fontFamily: "Medium", fontSize: 20 }}>
-            {props.name}
+            {props.deptTitle}
           </Text>
-          <View style={{ flexDirection: "row" }}>
-            <Text style={{ fontFamily: "Light", color: "#c1c1c1" }}>
-              {props.sub_1}
-            </Text>
-            <Text style={{ fontFamily: "Light", color: "#c1c1c1" }}>/</Text>
-            <Text style={{ fontFamily: "Light", color: "#c1c1c1" }}>
-              {props.sub_2}
-            </Text>
-          </View>
+          <Text
+            style={{
+              fontFamily: "Light",
+              color: "#c1c1c1",
+              marginVertical: "2%",
+            }}
+          >
+            {props.deptAddress}
+          </Text>
+
+          <Text style={{ fontFamily: "Light", color: "#c1c1c1" }}>
+            {props.createdOn}
+          </Text>
         </View>
         <View style={{ flex: 0.5 }}>
           <Icon

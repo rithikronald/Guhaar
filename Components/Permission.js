@@ -31,7 +31,7 @@ export default function Permission(props, { navigation }) {
       <View
         style={{
           width: 280,
-          height: "88%",
+          height: "90%",
           elevation: 10,
           borderRadius: 50,
           backgroundColor: "#fff",
@@ -48,8 +48,8 @@ export default function Permission(props, { navigation }) {
         >
           <View
             style={{
-              height: 200,
-              width: 200,
+              height: 160,
+              width: 160,
               padding: "4%",
               borderRadius: 100,
               backgroundColor: "#ffd54f",
@@ -60,7 +60,7 @@ export default function Permission(props, { navigation }) {
             <Icon
               name={props.Icon}
               type="font-awesome-5"
-              size={100}
+              size={80}
               color="#fff"
               containerStyle={{}}
             />

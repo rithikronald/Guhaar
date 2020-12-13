@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
 import { Avatar, Icon } from "react-native-elements";
+import axios from "axios";
 
 import { useFonts } from "expo-font";
 
@@ -17,8 +18,26 @@ import BackGround from "../Components/background";
 import Header from "../Components/Header";
 
 export default function Profile({ navigation }) {
-  const [search, setSearch] = useState("");
-  const window = Dimensions.get("window");
+  const [mobile, setMobile] = useState("");
+
+  function post() {
+    var data = new FormData();
+    data.append("mobile", mobile);
+
+    axios
+      .post("https://guhaar.online/GuhaarNewAPi/index.php/send-otp", data)
+      .then(function (response) {
+        console.log("Request Success");
+        console.log(JSON.stringify(response.data));
+        navigation.push("OTP", {
+          mobile: mobile,
+          key: response.data.key,
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
 
   const [fontsLoaded] = useFonts({
     Black: require("../assets/fonts/Gotham-Black.otf"),
@@ -74,6 +93,9 @@ export default function Profile({ navigation }) {
               }}
               keyboardType="number-pad"
               maxLength={10}
+              onChangeText={(txt) => {
+                setMobile(txt);
+              }}
             />
             <View style={{ flex: 1 }}>
               <Icon
@@ -91,7 +113,8 @@ export default function Profile({ navigation }) {
                   elevation: 8,
                 }}
                 onPress={() => {
-                  navigation.push("OTP");
+                  post();
+                  //console.log(mobile);
                 }}
               />
             </View>

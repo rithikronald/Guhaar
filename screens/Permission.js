@@ -43,20 +43,22 @@ export default function Profile({ navigation }) {
           style={{
             alignItems: "center",
             justifyContent: "center",
-            padding: 10,
-            margin: "12%",
           }}
         >
           <Image
             source={require("../assets/images/logo-light.png")}
-            style={{ width: 160, height: 108 }}
+            style={{ width: 160 }}
+            resizeMode="contain"
           />
         </View>
         <ScrollView
           style={{
             alignSelf: "center",
           }}
-          contentContainerStyle={{ paddingLeft: "10%" }}
+          contentContainerStyle={{
+            paddingLeft: "10%",
+            paddingBottom: "4%",
+          }}
           horizontal
           showsHorizontalScrollIndicator={false}
         >
