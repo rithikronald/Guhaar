@@ -141,7 +141,7 @@ export default function HomeDashboard({ navigation }) {
             <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
               <TouchableOpacity
                 onPress={() => {
-                  navigation.push("NewComplaints");
+                  navigation.push("LodgeComplaint1");
                 }}
               >
                 <Image
@@ -193,7 +193,7 @@ export default function HomeDashboard({ navigation }) {
             <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
               <TouchableOpacity
                 onPress={() => {
-                  navigation.push("RejectedComplaint");
+                  navigation.push("NoComplaint");
                 }}
               >
                 <Image
@@ -218,7 +218,7 @@ export default function HomeDashboard({ navigation }) {
             <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
               <TouchableOpacity
                 onPress={() => {
-                  navigation.push("ClosedComplaint");
+                  navigation.push("NoComplaint");
                 }}
               >
                 <Image

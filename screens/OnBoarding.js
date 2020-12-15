@@ -16,7 +16,7 @@ import { useFonts } from "expo-font";
 import BackGround from "../Components/background";
 import Header from "../Components/Header";
 
-export default function Profile({ navigation }) {
+export default function OnBoarding({ navigation }) {
   const data = [
     {
       text: "India's First BlockChain Grieviance App",
@@ -27,6 +27,7 @@ export default function Profile({ navigation }) {
       photo: require("../assets/images/grievance-app.png"),
     },
   ];
+
   const [page, setPage] = useState(0);
 
   const window = Dimensions.get("window");

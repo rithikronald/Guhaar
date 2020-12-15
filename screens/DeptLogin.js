@@ -126,7 +126,7 @@ export default function Profile({ navigation }) {
                   marginTop: "3%",
                 }}
                 onPress={() => {
-                  navigation.push("Dashboard");
+                  navigation.push("DeptDashboard");
                 }}
               />
             </View>

@@ -146,7 +146,7 @@ export default function NewComplaint({ navigation }) {
             elevation: 8,
           }}
           onPress={() => {
-            navigation.push("NewComplaint2");
+            navigation.push("LodgeComplaint2");
           }}
         >
           <Text
