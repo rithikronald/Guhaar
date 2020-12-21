@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useRef} from "react";
 import { StatusBar } from "expo-status-bar";
 import {
   Text,
@@ -12,10 +12,22 @@ import {
 } from "react-native";
 import { Icon, Avatar } from "react-native-elements";
 import { useFonts } from "expo-font";
-import { TextInput } from "react-native-gesture-handler";
+import { ScrollView, TextInput } from "react-native-gesture-handler";
+import axios from 'axios'
+
 
 export default function NewComplaint({ navigation }) {
   const window = Dimensions.get("window");
+
+  const FullName = useRef("")
+  const AgeGroup = useRef("")
+  const Gender = useRef("")
+  const MobileNumber = useRef("")
+  const Address = useRef("")
+  const Occupation = useRef("") 
+  const IdentificationMethod = useRef("")
+  const IDnumber = useRef("")
+
   const [fontsLoaded] = useFonts({
     Black: require("../assets/fonts/Gotham-Black.otf"),
     Bold: require("../assets/fonts/GothamBold.ttf"),
@@ -64,89 +76,110 @@ export default function NewComplaint({ navigation }) {
             Lodge New Complaints
           </Text>
         </View>
-        <Text style={styles.blueFont}>Personal Information</Text>
-        <View style={styles.centerContent}>
-          <TextInput placeholder="Full Name" style={styles.inputStyle} />
+        <ScrollView style={{alignSelf:"center",width:'100%'}} contentContainerStyle={{paddingHorizontal:"8%",paddingVertical:"4%"}}>
+        <Text style={{fontSize:25,fontFamily:'Medium',color:"#1c549c",marginBottom:'3%'}}>Personal Information</Text>
+          <TextInput placeholder="Full Name" onChangeText={(val)=>{
+            FullName.current = val
+          }} style={styles.inputStyle} />
 
           <View style={styles.rowInputs}>
             <TextInput
               placeholder="Age Group"
+              onChangeText={(val)=>{
+                AgeGroup.current = val
+              }}
               style={{
                 marginEnd: 4,
                 marginVertical: "2%",
-                width: "50%",
                 fontSize: 18,
-                textAlignVertical: "top",
-                shadowColor: "#0000",
                 backgroundColor: "white",
                 borderRadius: 6,
-                paddingHorizontal: "5%",
-                paddingVertical: "2%",
+                padding:10,
                 fontFamily: "Medium",
                 elevation: 8,
+                flex:3
               }}
             />
 
             <TextInput
-              placeholder="Male"
+              placeholder="Gender"
+              onChangeText={(val)=>{
+                Gender.current = val
+              }}
               style={{
                 marginVertical: "2%",
-                width: "30%",
                 fontSize: 18,
-                textAlignVertical: "top",
                 shadowColor: "#0000",
                 backgroundColor: "white",
                 borderRadius: 6,
-                paddingHorizontal: "5%",
-                paddingVertical: "2%",
+                padding:10,
                 fontFamily: "Medium",
                 elevation: 8,
+                flex:2
               }}
             />
           </View>
 
-          <TextInput placeholder="Mobile Number" style={styles.inputStyle} />
+          <TextInput placeholder="Mobile Number" onChangeText={(val)=>{
+                MobileNumber.current = val
+              }} style={styles.inputStyle} />
 
           <TextInput
             placeholder="Enter Your Address"
+            onChangeText={(val)=>{
+              Address.current = val
+            }}
             multiline={true}
             numberOfLines={4}
             style={{
               marginVertical: "2%",
-              width: "80%",
               fontSize: 18,
               textAlignVertical: "top",
-              shadowColor: "#0000",
               backgroundColor: "white",
               borderRadius: 6,
-              paddingHorizontal: "5%",
-              paddingVertical: "2%",
+              padding:10,
               fontFamily: "Medium",
               elevation: 8,
             }}
           />
-          <TextInput placeholder="Occupation" style={styles.inputStyle} />
+          <TextInput placeholder="Occupation" onChangeText={(val)=>{
+                Occupation.current = val
+              }} style={styles.inputStyle} />
 
           <TextInput
             placeholder="Identification Method"
+            onChangeText={(val)=>{
+              IdentificationMethod.current = val
+            }}
             style={styles.inputStyle}
           />
-          <TextInput placeholder="ID Card Number" style={styles.inputStyle} />
-        </View>
-        <TouchableOpacity
+          <TextInput placeholder="ID Card Number" onChangeText={(val)=>{
+                IDnumber.current = val
+              }} style={styles.inputStyle} />
+          <TouchableOpacity
           style={{
-            bottom: "5%",
             alignSelf: "flex-end",
             borderRadius: 25,
             padding: 8,
             alignItems: "center",
             backgroundColor: "#1c549c",
             justifyContent: "center",
-            right: "3%",
             elevation: 8,
+            marginTop:'6%'
+            
           }}
           onPress={() => {
-            navigation.push("LodgeComplaint2");
+            navigation.push("LodgeComplaint2",{
+              FullName:FullName.current,
+              AgeGroup:AgeGroup.current,
+              Gender:Gender.current,
+              MobileNumber:MobileNumber.current,
+              Address:Address.current,
+              Occupation:Occupation.current,
+              IdentificationMethod:IdentificationMethod.current,
+              IDnumber:IDnumber.current
+            });
+           
           }}
         >
           <Text
@@ -160,7 +193,10 @@ export default function NewComplaint({ navigation }) {
             NEXT
           </Text>
         </TouchableOpacity>
+        </ScrollView>
+      
       </View>
+     
     );
   }
 }
@@ -168,82 +204,22 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#ECECEC",
-    alignItems: "flex-start",
-    justifyContent: "flex-start",
-    fontFamily: "Bold",
   },
   header: {
-    alignSelf: "stretch",
     height: "20%",
     backgroundColor: "#1c549c",
   },
-  backBtn: {
-    borderWidth: 1,
-    borderColor: "rgba(0,0,0,0.2)",
-    alignItems: "center",
-    justifyContent: "center",
-    width: 25,
-    height: 25,
-    backgroundColor: "#fff",
-    borderRadius: 50,
-    margin: 24,
-  },
-  titleText: {
-    fontSize: 26,
-    color: "white",
-    marginHorizontal: "8%",
-    fontFamily: "Book",
-  },
-  roundedBtnBlue: {
-    width: 260,
-    marginTop: 16,
-    borderRadius: 48,
-    elevation: 10,
-    padding: 10,
-    alignItems: "center",
-    backgroundColor: "#1c549c",
-  },
-  roundedBtnWhite: {
-    width: 260,
-    marginTop: 8,
-    borderRadius: 48,
-    elevation: 10,
-    padding: 10,
-    alignItems: "center",
-    backgroundColor: "white",
-  },
-  centerContent: {
-    marginTop: "2%",
-    flex: 1,
-    flexDirection: "column",
-    width: "100%",
-    alignItems: "center",
-    justifyContent: "flex-start",
-  },
-
-  blueFont: {
-    color: "#1c549c",
-    fontSize: 24,
-    fontWeight: "bold",
-    marginHorizontal: "10%",
-    paddingTop: 8,
-    fontFamily: "Bold",
-  },
   inputStyle: {
     marginVertical: "2%",
-    width: "80%",
     fontSize: 18,
-    shadowColor: "#0000",
     backgroundColor: "white",
     borderRadius: 6,
-    paddingHorizontal: "5%",
-    paddingVertical: "2%",
+    padding:10,
     fontFamily: "Medium",
     elevation: 8,
   },
   rowInputs: {
     flexDirection: "row",
-    alignItems: "flex-start",
-    justifyContent: "flex-start",
+    justifyContent:'space-between'
   },
 });

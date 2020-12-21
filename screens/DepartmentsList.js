@@ -63,9 +63,7 @@ export default function DepartmentsList({ navigation, route }) {
                 deptTitle={item.deptTitle}
                 deptAddress={item.deptAddress}
                 createdOn={item.createdOn}
-                onPress={() => {
-                  navigation.push("Profile");
-                }}
+                
               />
             )}
             showsVerticalScrollIndicator={false}

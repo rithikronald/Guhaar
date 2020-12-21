@@ -17,7 +17,7 @@ import { useFonts } from "expo-font";
 import BackGround from "../Components/background";
 import Header from "../Components/Header";
 
-export default function HomeDashboard({ navigation }) {
+export default function HomeDashboard({ navigation,route }) {
   const [search, setSearch] = useState("");
   const window = Dimensions.get("window");
 
@@ -31,6 +31,75 @@ export default function HomeDashboard({ navigation }) {
         navigation.push("DepartmentsList", {
           data: response.data.DepartmentList,
         });
+      })
+      .catch(function (error) {
+        console.log(error.message);
+      });
+  }
+
+  function MyComplaints() {
+
+    var data = new FormData();
+    data.append("status", 0);
+    data.append("uid", "4d25ec4aef06dd0a1d911ef63219b615");
+
+    axios
+      .post("https://guhaar.online/GuhaarNewAPi/index.php/get-complaints-user",data)
+      .then(function (response) {
+        console.log("Request Success");
+        console.log(JSON.stringify(response.data));
+        response.data.flag ? navigation.navigate("MyComplaint") : navigation.navigate("NoComplaint");
+      })
+      .catch(function (error) {
+        console.log(error.message);
+      });
+  }
+
+  function ClosedComplaints() {
+
+    var data = new FormData();
+    data.append("status", 2);
+    data.append("uid", "4d25ec4aef06dd0a1d911ef63219b615");
+
+    axios
+      .post("https://guhaar.online/GuhaarNewAPi/index.php/get-complaints-user",data)
+      .then(function (response) {
+        console.log("Request Success");
+        console.log(JSON.stringify(response.data));
+        response.data.flag ? navigation.navigate("DepartmentsList") : navigation.navigate("NoComplaint");
+      })
+      .catch(function (error) {
+        console.log(error.message);
+      });
+  }
+
+  function RejectedComplaints() {
+
+    var data = new FormData();
+    data.append("status", 3);
+    data.append("uid", "4d25ec4aef06dd0a1d911ef63219b615");
+
+    axios
+      .post("https://guhaar.online/GuhaarNewAPi/index.php/get-complaints-user",data)
+      .then(function (response) {
+        console.log("Request Success");
+        console.log(JSON.stringify(response.data));
+        response.data.flag ? navigation.navigate("DepartmentsList") : navigation.navigate("NoComplaint");
+      })
+      .catch(function (error) {
+        console.log(error.message);
+      });
+  }
+
+  function Services() {
+    axios
+      .post("https://guhaar.online/GuhaarNewAPi/index.php/lok-seva-services")
+      .then(function (response) {
+        console.log("Request Success");
+        console.log(JSON.stringify(response.data));
+        navigation.navigate('PublicService',{
+          data:response.data.seva
+        })
       })
       .catch(function (error) {
         console.log(error.message);
@@ -52,7 +121,9 @@ export default function HomeDashboard({ navigation }) {
       <View style={{ flex: 1, backgroundColor: "#ededed" }}>
         <StatusBar style="auto" />
         <BackGround />
-        <Header name="bars" />
+        <Header name="bars" onPress={()=>{
+          navigation.openDrawer()
+        }} />
         <View
           style={{
             flexDirection: "row",
@@ -165,9 +236,7 @@ export default function HomeDashboard({ navigation }) {
             </View>
             <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
               <TouchableOpacity
-                onPress={() => {
-                  navigation.push("MyComplaint");
-                }}
+                onPress={MyComplaints}
               >
                 <Image
                   style={{
@@ -192,9 +261,7 @@ export default function HomeDashboard({ navigation }) {
           <View style={{ flex: 1, flexDirection: "row", flexWrap: "wrap" }}>
             <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
               <TouchableOpacity
-                onPress={() => {
-                  navigation.push("NoComplaint");
-                }}
+                onPress={ClosedComplaints}
               >
                 <Image
                   style={{
@@ -217,9 +284,7 @@ export default function HomeDashboard({ navigation }) {
             </View>
             <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
               <TouchableOpacity
-                onPress={() => {
-                  navigation.push("NoComplaint");
-                }}
+                onPress={RejectedComplaints}
               >
                 <Image
                   style={{
@@ -244,9 +309,7 @@ export default function HomeDashboard({ navigation }) {
           <View style={{ flex: 1, flexDirection: "row", flexWrap: "wrap" }}>
             <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
               <TouchableOpacity
-                onPress={() => {
-                  navigation.push("PublicService");
-                }}
+                onPress={Services}
               >
                 <Image
                   style={{

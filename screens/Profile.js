@@ -46,7 +46,7 @@ export default function Profile({ navigation }) {
             alignSelf: "center",
             width: "86%",
             paddingVertical: "6%",
-            marginTop: "6%",
+            marginTop: "10%",
             elevation: 8,
           }}
         >
@@ -119,7 +119,9 @@ export default function Profile({ navigation }) {
                 padding: "2%",
                 marginTop: "4%",
               }}
-              onPress={() => navigation.push("EditProfile")}
+              onPress={()=>{
+                navigation.navigate('EditProfile')
+              }}
             >
               <Text style={{ color: "#fff", fontSize: 12, fontFamily: "Bold" }}>
                 EDIT PROFILE

@@ -1,8 +1,8 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import ComplaintDetails from "../screens/ComplaintDetails";
-import EditProfile from "../screens/EditProfile";
+import ComplaintDetails from "../screens/complaintDetails";
+import EditProfile from "../screens/editProfile";
 import DepartmentsList from "../screens/DepartmentsList";
 import Profile from "../screens/Profile";
 import DeptDashboard from "../screens/DeptDashboard";
@@ -17,19 +17,19 @@ import MyComplaint from "../screens/MyComplaints";
 import Login from "../screens/Login";
 import OTP from "../screens/OTP";
 import NewService from "../screens/NewService";
-import NewService2 from "..screens/NewService2";
 import HomeDashboard from "../screens/HomeDashboard";
 import NoComplaint from "../screens/NoComplaint";
 import RejectedComplaint from "../screens/RejectedComplaint";
 import DeptLogin from "../screens/DeptLogin";
+import Newservice2 from "../screens/NewService2"
 
 export default function HomeStack() {
   const Stack = createStackNavigator();
 
   return (
-    <NavigationContainer>
+    
       <Stack.Navigator
-        initialRouteName="OnBoarding"
+        initialRouteName="HomeDashboard"
         screenOptions={{ headerShown: false }}
       >
         <Stack.Screen name="ComplaintDetails" component={ComplaintDetails} />
@@ -48,12 +48,12 @@ export default function HomeStack() {
         <Stack.Screen name="OTP" component={OTP} />
         <Stack.Screen name="NewService" component={NewService} />
         <Stack.Screen name="HomeDashboard" component={HomeDashboard} />
-        <Stack.Screen name="NewService2" component={NewService2} />
         <Stack.Screen name="NoComplaint" component={NoComplaint} />
         <Stack.Screen name="RejectedComplaint" component={RejectedComplaint} />
         <Stack.Screen name="LodgeComplaint2" component={LodgeComplaint2} />
         <Stack.Screen name="DeptLogin" component={DeptLogin} />
+        <Stack.Screen name="Newservice2" component={Newservice2} />
       </Stack.Navigator>
-    </NavigationContainer>
+ 
   );
 }

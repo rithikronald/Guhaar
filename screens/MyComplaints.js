@@ -16,19 +16,8 @@ import { useFonts } from "expo-font";
 import BackGround from "../Components/background";
 import Header from "../Components/Header";
 
-export default function Profile({ navigation }) {
+export default function Profile({ navigation,route }) {
   const window = Dimensions.get("window");
-  const SECTIONS = [
-    {
-      title: "First",
-      content: "Lorem ipsum...",
-    },
-    {
-      title: "Second",
-      content: "Lorem ipsum...",
-    },
-  ];
-  const [activeSection, setActiveSection] = useState([]);
 
   const [fontsLoaded] = useFonts({
     Black: require("../assets/fonts/Gotham-Black.otf"),

@@ -1,17 +1,15 @@
 import { StatusBar } from "expo-status-bar";
-import React, { useState } from "react";
-import { View, ActivityIndicator, Dimensions, Text, Image } from "react-native";
+import React, { useState,useEffect } from "react";
+import { View, ActivityIndicator, Dimensions, Text, Image,FlatList } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { Avatar } from "react-native-elements";
-
 import { useFonts } from "expo-font";
-
 import BackGround from "../Components/background";
 import Header from "../Components/Header";
 
-export default function PublicService({ navigation }) {
-  const [search, setSearch] = useState("");
-  const window = Dimensions.get("window");
+export default function PublicService({ navigation,route }) {
+
+  const data = route.params.data  
 
   const [fontsLoaded] = useFonts({
     Black: require("../assets/fonts/Gotham-Black.otf"),
@@ -33,12 +31,13 @@ export default function PublicService({ navigation }) {
           style={{
             width: "86%",
             elevation: 8,
-            height: "80%",
+            paddingBottom:"8%",
             padding: "4%",
             borderRadius: 20,
             backgroundColor: "#fff",
             marginTop: "4%",
             alignSelf: "center",
+           
           }}
         >
           <View style={{ alignItems: "center" }}>
@@ -46,189 +45,40 @@ export default function PublicService({ navigation }) {
               Public Service
             </Text>
           </View>
-          <View style={{ flex: 1, flexDirection: "row", flexWrap: "wrap" }}>
-            <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
-              <TouchableOpacity
-                onPress={() => {
-                  navigation.push("NewService");
-                }}
-              >
+         <FlatList 
+          data = {data}
+          keyExtractor={(item)=>{
+            item.id
+          }}
+          style={{alignSelf:"center"}}
+          contentContainerStyle={{alignItems:"center"}}
+          numColumns={2}
+          renderItem={({item})=>(
+            <TouchableOpacity style={{ flex: 1, alignItems: "center",width:150,marginTop:"5%", padding:10}}>
                 <Image
                   style={{
                     width: 60,
                     height: 60,
                   }}
-                  source={require("../assets/images/lodge-complaint.png")}
+                  source={{uri:item.icon}}
                 />
-              </TouchableOpacity>
               <Text
                 style={{
-                  fontFamily: "Book",
+                  fontFamily: "Medium",
                   fontSize: 12,
                   textAlign: "center",
-                  paddingVertical: 10,
+                  flexWrap:'wrap',
+                  marginTop:10
                 }}
               >
-                New Ration Card Request
+                {item.slug}
               </Text>
-            </View>
-            <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
-              <TouchableOpacity>
-                <Image
-                  style={{
-                    width: 60,
-                    height: 60,
-                  }}
-                  source={require("../assets/images/my-complaint.png")}
-                />
-              </TouchableOpacity>
-              <Text
-                style={{
-                  fontFamily: "Book",
-                  fontSize: 12,
-                  textAlign: "center",
-                  paddingVertical: 10,
-                }}
-              >
-                Indira Gandhi Pension Scheme
-              </Text>
-            </View>
-          </View>
-
-          <View style={{ flex: 1, flexDirection: "row", flexWrap: "wrap" }}>
-            <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
-              <TouchableOpacity>
-                <Image
-                  style={{
-                    width: 60,
-                    height: 60,
-                  }}
-                  source={require("../assets/images/lodge-complaint.png")}
-                />
-              </TouchableOpacity>
-              <Text
-                style={{
-                  fontFamily: "Book",
-                  fontSize: 12,
-                  textAlign: "center",
-                  paddingVertical: 10,
-                }}
-              >
-                Old Age Pension Scheme
-              </Text>
-            </View>
-            <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
-              <TouchableOpacity>
-                <Image
-                  style={{
-                    width: 60,
-                    height: 60,
-                  }}
-                  source={require("../assets/images/my-complaint.png")}
-                />
-              </TouchableOpacity>
-              <Text
-                style={{
-                  fontFamily: "Book",
-                  fontSize: 12,
-                  textAlign: "center",
-                  paddingVertical: 10,
-                }}
-              >
-                Window pension Scheme
-              </Text>
-            </View>
-          </View>
-          <View style={{ flex: 1, flexDirection: "row", flexWrap: "wrap" }}>
-            <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
-              <TouchableOpacity>
-                <Image
-                  style={{
-                    width: 60,
-                    height: 60,
-                  }}
-                  source={require("../assets/images/closed-complaint.png")}
-                />
-              </TouchableOpacity>
-              <Text
-                style={{
-                  fontFamily: "Book",
-                  fontSize: 12,
-                  textAlign: "center",
-                  paddingVertical: 10,
-                }}
-              >
-                Residential Certificate
-              </Text>
-            </View>
-            <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
-              <TouchableOpacity>
-                <Image
-                  style={{
-                    width: 60,
-                    height: 60,
-                  }}
-                  source={require("../assets/images/rejected-complaint.png")}
-                />
-              </TouchableOpacity>
-              <Text
-                style={{
-                  fontFamily: "Book",
-                  fontSize: 12,
-                  textAlign: "center",
-                  paddingVertical: 10,
-                }}
-              >
-                Income Certificate Request
-              </Text>
-            </View>
-          </View>
-          <View style={{ flex: 1, flexDirection: "row", flexWrap: "wrap" }}>
-            <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
-              <TouchableOpacity>
-                <Image
-                  style={{
-                    width: 60,
-                    height: 60,
-                  }}
-                  source={require("../assets/images/public-service.png")}
-                />
-              </TouchableOpacity>
-              <Text
-                style={{
-                  fontFamily: "Book",
-                  fontSize: 12,
-                  textAlign: "center",
-                  paddingVertical: 10,
-                }}
-              >
-                Cleanliness Request
-              </Text>
-            </View>
-            <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
-              <TouchableOpacity>
-                <Image
-                  style={{
-                    width: 60,
-                    height: 60,
-                  }}
-                  source={require("../assets/images/all-departments.png")}
-                />
-              </TouchableOpacity>
-              <Text
-                style={{
-                  fontFamily: "Book",
-                  fontSize: 12,
-                  textAlign: "center",
-                  paddingVertical: 10,
-                }}
-              >
-                Street Light Change Request
-              </Text>
-            </View>
-          </View>
+            </TouchableOpacity>
+          )}
+         />
         </View>
       </View>
     );
   }
 }
+

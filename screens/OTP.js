@@ -33,7 +33,9 @@ export default function OTP({ navigation, route }) {
         console.log("Request Success");
         console.log(JSON.stringify(response.data));
         response.data.flag == true
-          ? navigation.push("HomeDashboard")
+          ? navigation.push("HomeDashboard",{
+            uid:response.data.secretKey
+          })
           : alert("OTP Not Verified");
       })
       .catch(function (error) {
