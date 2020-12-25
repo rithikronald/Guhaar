@@ -38,11 +38,10 @@ export default function HomeDashboard({ navigation,route }) {
   }
 
   function MyComplaints() {
-
     var data = new FormData();
     data.append("status", 0);
     data.append("uid", "4d25ec4aef06dd0a1d911ef63219b615");
-
+    
     axios
       .post("https://guhaar.online/GuhaarNewAPi/index.php/get-complaints-user",data)
       .then(function (response) {

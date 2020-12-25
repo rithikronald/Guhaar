@@ -3,30 +3,48 @@ import React, { useState } from "react";
 import {
   View,
   ActivityIndicator,
-  Dimensions,
-  FlatList,
   Text,
   Image,
 } from "react-native";
 import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
 import { Avatar, Icon } from "react-native-elements";
-
 import { useFonts } from "expo-font";
+import Header from "../../Components/Header";
+import axios from 'axios'
 
-import BackGround from "../Components/background";
-import Header from "../Components/Header";
+export default function DeptLogin({ navigation }) {
+  const [mobile,setMobile] = useState()
+  const [password,setPassword] = useState()
 
-export default function Profile({ navigation }) {
-  const [search, setSearch] = useState("");
-  const window = Dimensions.get("window");
+  function post() {
+    var data = new FormData();
+    data.append("email", mobile);
+    data.append('password',password)
+    data.append('noti_token',null)
+    data.append('app_version',"iGuhaar.01")
+
+    axios
+      .post("https://guhaar.online/GuhaarNewAPi/index.php/employee-login", data)
+      .then(function (response) {
+        console.log("Request Success");
+        console.log(JSON.stringify(response.data));
+        navigation.push("DeptDashboard",{
+          uid:response.data.emp_key
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+        alert('Check your Number and Password')
+      });
+  }
 
   const [fontsLoaded] = useFonts({
-    Black: require("../assets/fonts/Gotham-Black.otf"),
-    Bold: require("../assets/fonts/GothamBold.ttf"),
-    Book: require("../assets/fonts/GothamBook.ttf"),
-    Light: require("../assets/fonts/GothamLight.ttf"),
-    Medium: require("../assets/fonts/GothamMedium.ttf"),
-    Thin: require("../assets/fonts/Gotham-Thin.otf"),
+    Black: require("../../assets/fonts/Gotham-Black.otf"),
+    Bold: require("../../assets/fonts/GothamBold.ttf"),
+    Book: require("../../assets/fonts/GothamBook.ttf"),
+    Light: require("../../assets/fonts/GothamLight.ttf"),
+    Medium: require("../../assets/fonts/GothamMedium.ttf"),
+    Thin: require("../../assets/fonts/Gotham-Thin.otf"),
   });
   if (!fontsLoaded) {
     return <ActivityIndicator />;
@@ -37,7 +55,7 @@ export default function Profile({ navigation }) {
         <Header />
         <View style={{ flex: 1, justifyContent: "flex-end" }}>
           <Image
-            source={require("../assets/images/logo-light.png")}
+            source={require("../../assets/images/logo-light.png")}
             style={{
               width: 180,
               height: 120,
@@ -74,6 +92,9 @@ export default function Profile({ navigation }) {
               }}
               keyboardType="number-pad"
               maxLength={10}
+              onChangeText={(val)=>{
+                setMobile(val)
+              }}
             />
             <Text
               style={{
@@ -94,8 +115,10 @@ export default function Profile({ navigation }) {
                 fontSize: 18,
                 fontFamily: "Book",
               }}
-              keyboardType="number-pad"
               maxLength={10}
+              onChangeText={(val)=>{
+                setPassword(val)
+              }}
             />
             <View
               style={{
@@ -125,9 +148,7 @@ export default function Profile({ navigation }) {
                   elevation: 8,
                   marginTop: "3%",
                 }}
-                onPress={() => {
-                  navigation.push("DeptDashboard");
-                }}
+                onPress={post}
               />
             </View>
           </View>

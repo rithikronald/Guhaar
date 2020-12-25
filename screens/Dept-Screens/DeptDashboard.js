@@ -4,29 +4,90 @@ import {
   View,
   ActivityIndicator,
   Dimensions,
-  FlatList,
   Text,
   Image,
 } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { Avatar } from "react-native-elements";
-
 import { useFonts } from "expo-font";
+import BackGround from "../../Components/background";
+import Header from "../../Components/Header";
+import axios from 'axios'
 
-import BackGround from "../Components/background";
-import Header from "../Components/Header";
-
-export default function Profile({ navigation }) {
+export default function Profile({ navigation,route }) {
   const [search, setSearch] = useState("");
   const window = Dimensions.get("window");
 
+  function Pending() {
+    var data = new FormData();
+    data.append("status", 1);
+    data.append('uid',route.params.uid)
+    
+    axios
+      .post("https://guhaar.online/GuhaarNewAPi/index.php/employee-assigned-complaints", data)
+      .then(function (response) {
+        console.log("Request Success");
+        console.log(JSON.stringify(response.data));
+        console.log(route.params.uid)
+        response.data.flag ?
+        navigation.push("MyComplaint",{
+          data:response.data.Complaints
+        }):navigation.push('NoComplaint')
+      })
+      .catch(function (error) {
+        console.log(error);
+        alert('Check your Number and Password')
+      });
+  }
+  
+  function Resolved() {
+    var data = new FormData();
+    data.append("status", 2);
+    data.append('uid',route.params.uid)
+    
+    axios
+      .post("https://guhaar.online/GuhaarNewAPi/index.php/employee-assigned-complaints", data)
+      .then(function (response) {
+        console.log("Request Success");
+        console.log(JSON.stringify(response.data));
+        response.data.flag ?
+        navigation.navigate("MyComplaint",{
+          data:response.data.Complaints
+        }):navigation.push('NoComplaint')
+      })
+      .catch(function (error) {
+        console.log(error);
+        alert('Check your Number and Password')
+      });
+  }
+
+  function Rejected() {
+    var data = new FormData();
+    data.append("status", 3);
+    data.append('uid',route.params.uid)
+    
+    axios
+      .post("https://guhaar.online/GuhaarNewAPi/index.php/employee-assigned-complaints", data)
+      .then(function (response) {
+        console.log("Request Success");
+        console.log(JSON.stringify(response.data));
+        response.data.flag ?
+        navigation.navigate("MyComplaint",{
+          data:response.data.Complaints
+        }):navigation.push('NoComplaint')
+      })
+      .catch(function (error) {
+        console.log(error);
+        alert('Check your Number and Password')
+      });
+  }
+
   const [fontsLoaded] = useFonts({
-    Black: require("../assets/fonts/Gotham-Black.otf"),
-    Bold: require("../assets/fonts/GothamBold.ttf"),
-    Book: require("../assets/fonts/GothamBook.ttf"),
-    Light: require("../assets/fonts/GothamLight.ttf"),
-    Medium: require("../assets/fonts/GothamMedium.ttf"),
-    Thin: require("../assets/fonts/Gotham-Thin.otf"),
+    Black: require("../../assets/fonts/Gotham-Black.otf"),
+    Bold: require("../../assets/fonts/GothamBold.ttf"),
+    Book: require("../../assets/fonts/GothamBook.ttf"),
+    Light: require("../../assets/fonts/GothamLight.ttf"),
+    Medium: require("../../assets/fonts/GothamMedium.ttf"),
+    Thin: require("../../assets/fonts/Gotham-Thin.otf"),
   });
   if (!fontsLoaded) {
     return <ActivityIndicator />;
@@ -123,9 +184,7 @@ export default function Profile({ navigation }) {
           <View style={{ flex: 1, flexDirection: "row", flexWrap: "wrap" }}>
             <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
               <TouchableOpacity
-                onPress={() => {
-                  navigation.push("MyComplaint");
-                }}
+                onPress={Pending}
               >
                 <Image
                   style={{
@@ -133,7 +192,7 @@ export default function Profile({ navigation }) {
                     height: 60,
                     alignSelf: "center",
                   }}
-                  source={require("../assets/images/lodge-complaint.png")}
+                  source={require("../../assets/images/lodge-complaint.png")}
                 />
 
                 <Text
@@ -151,9 +210,7 @@ export default function Profile({ navigation }) {
             </View>
             <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
               <TouchableOpacity
-                onPress={() => {
-                  navigation.push("ClosedComplaint");
-                }}
+                onPress={Resolved}
               >
                 <Image
                   style={{
@@ -161,7 +218,7 @@ export default function Profile({ navigation }) {
                     height: 60,
                     alignSelf: "center",
                   }}
-                  source={require("../assets/images/my-complaint.png")}
+                  source={require("../../assets/images/my-complaint.png")}
                 />
                 <Text
                   style={{
@@ -181,7 +238,7 @@ export default function Profile({ navigation }) {
             <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
               <TouchableOpacity
                 onPress={() => {
-                  navigation.push("ClosedComplaint");
+                  navigation.push("NoComplaint");
                 }}
               >
                 <Image
@@ -190,7 +247,7 @@ export default function Profile({ navigation }) {
                     height: 60,
                     alignSelf: "center",
                   }}
-                  source={require("../assets/images/closed-complaint.png")}
+                  source={require("../../assets/images/closed-complaint.png")}
                 />
 
                 <Text
@@ -208,9 +265,7 @@ export default function Profile({ navigation }) {
             </View>
             <View style={{ flex: 1, padding: "6%", alignItems: "center" }}>
               <TouchableOpacity
-                onPress={() => {
-                  navigation.push("ClosedComplaint");
-                }}
+                onPress={Rejected}
               >
                 <Image
                   style={{
@@ -218,7 +273,7 @@ export default function Profile({ navigation }) {
                     height: 60,
                     alignSelf: "center",
                   }}
-                  source={require("../assets/images/rejected-complaint.png")}
+                  source={require("../../assets/images/rejected-complaint.png")}
                 />
 
                 <Text
@@ -248,7 +303,7 @@ export default function Profile({ navigation }) {
                     height: 60,
                     alignSelf: "center",
                   }}
-                  source={require("../assets/images/public-service.png")}
+                  source={require("../../assets/images/public-service.png")}
                 />
 
                 <Text
@@ -276,7 +331,7 @@ export default function Profile({ navigation }) {
                     height: 60,
                     alignSelf: "center",
                   }}
-                  source={require("../assets/images/all-departments.png")}
+                  source={require("../../assets/images/all-departments.png")}
                 />
 
                 <Text

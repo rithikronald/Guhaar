@@ -4,8 +4,6 @@ import {
   View,
   ActivityIndicator,
   Dimensions,
-  FlatList,
-  Text,
 } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { Avatar, Icon } from "react-native-elements";
@@ -49,5 +47,5 @@ export default function Profile({ navigation,route }) {
         </View>
       </View>
     );
-  }
+  } 
 }

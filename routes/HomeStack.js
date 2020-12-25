@@ -5,7 +5,6 @@ import ComplaintDetails from "../screens/complaintDetails";
 import EditProfile from "../screens/editProfile";
 import DepartmentsList from "../screens/DepartmentsList";
 import Profile from "../screens/Profile";
-import DeptDashboard from "../screens/DeptDashboard";
 import PublicService from "../screens/PublicService";
 import LodgeComplaint1 from "../screens/LodgeComplaint1";
 import LodgeComplaint2 from "../screens/LodgeComplaint2";
@@ -20,16 +19,17 @@ import NewService from "../screens/NewService";
 import HomeDashboard from "../screens/HomeDashboard";
 import NoComplaint from "../screens/NoComplaint";
 import RejectedComplaint from "../screens/RejectedComplaint";
-import DeptLogin from "../screens/DeptLogin";
 import Newservice2 from "../screens/NewService2"
+
+//Department Screens
+import DeptDashboard from "../screens/Dept-Screens/DeptDashboard";
+import DeptLogin from "../screens/Dept-Screens/DeptLogin"
 
 export default function HomeStack() {
   const Stack = createStackNavigator();
-
   return (
-    
       <Stack.Navigator
-        initialRouteName="HomeDashboard"
+        initialRouteName="DeptLogin"
         screenOptions={{ headerShown: false }}
       >
         <Stack.Screen name="ComplaintDetails" component={ComplaintDetails} />
@@ -54,6 +54,5 @@ export default function HomeStack() {
         <Stack.Screen name="DeptLogin" component={DeptLogin} />
         <Stack.Screen name="Newservice2" component={Newservice2} />
       </Stack.Navigator>
- 
   );
 }
